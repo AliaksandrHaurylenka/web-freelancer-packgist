@@ -1,0 +1,70 @@
+/* Carousel base class */
+.carousel {
+  margin-bottom: 2rem;
+}
+
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+  bottom: 3rem;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 32rem;
+  background-color: #777;
+}
+
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem;
+}
+
+//==================================
+
+.icon {
+  text-align: center;
+  margin-bottom: 2rem;
+  a {
+    outline: none;
+  }
+}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media only screen and (max-width: 992px) {
+  .button {
+    padding: 10px 30px;
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .blockquote {
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .carousel {
+    display: none;
+  }
+}
+
+/*@media only screen and (min-width: 768px) {
+  .navbar-toggleable-md .navbar-toggler {
+    display: none;
+  }
+
+  .navbar-toggleable-md .navbar-collapse {
+    display: -webkit-box!important;
+    display: -webkit-flex!important;
+    display: -ms-flexbox!important;
+    display: flex!important;
+    width: 100%;
+  }
+}*/

@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  &:before, &:after {
+      box-sizing: border-box;
+    }
+}
+
+//Стилизация input-placeholder 
+*::placeholder {
+  color: #666;
+  opacity: 1;
+}
+//=============//
+
+//Избегаем дергания экрана,
+//если одна страница со скролом,
+//а другая без
+html{ overflow-y: scroll; overflow-x: auto; }
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+  color: #666;
+}
+body input:required:valid,
+body textarea:required:valid {
+  color: #666;
+}
+html, body {
+  line-height: 1.4;
+  //height: 100%;
+}
+
+body {
+  padding-top: 3rem;
+  color: #5a5a5a;
+  font-size: 1rem;
+  min-width: 375px;
+  position: relative;
+  overflow-x: hidden;
+  opacity: 1;
+}
+
+//Страница не дергается при открытии модального окна
+body.modal-open {
+  overflow: auto;
+  padding-right: 0 !important;
+}
+
+
+
+// убираем стрелки в input при type=number
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
+// flex футер прижатый к низу https://codepen.io/Asmodey/pen/GqrVNX
+.wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.content {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: auto;
+}
+.footer{
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  margin-top: 1rem;
+}
+//=========================
+
+.well {
+  background: url(../img/hr_bg.png) repeat-x;
+  background-position: bottom left;
+  h1, h3 {
+    font-size: 1.5rem;
+    color: #363636;
+    background: url(../img/hr_bg.png) repeat-x;
+    background-position: bottom left;
+    text-transform: uppercase;
+  }
+}
+
+.active {
+  background: #eceeef;
+}
+
+.contact {
+  color: #fff;
+  font-weight: 500;
+}
+
+.mail {
+  cursor: pointer;
+}

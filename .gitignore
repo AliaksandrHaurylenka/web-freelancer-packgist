@@ -1,0 +1,7 @@
+/node_modules/
+/dist/
+/.git/
+/web/css/
+scripts.min.js
+/.idea/
+

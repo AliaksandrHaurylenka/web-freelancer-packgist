@@ -1,0 +1,2 @@
+[22-Mar-2018 07:47:12 Europe/Moscow] PHP Fatal error:  Call to undefined function mb_strlen() in /home/sportkostukovka/public_html/frontend/web/feedback/process/process.php on line 16
+[22-Mar-2018 07:50:55 Europe/Moscow] PHP Fatal error:  Call to undefined function mb_strlen() in /home/sportkostukovka/public_html/frontend/web/feedback/process/process.php on line 16

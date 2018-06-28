@@ -1,0 +1,3 @@
+User-agent: *
+Sitemap: http://strahovka-online.by/sitemap.xml
+Host: strahovka-online.by
