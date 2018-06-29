@@ -1,57 +1,20 @@
 $(function(){
 
-  var pos='top';
-  var trig='hover';
-
-  $('.transfer').popover({
-    placement: 'bottom',
-    trigger: 'focus',
-    html: true,
-    title: 'Доставка',
-    content:
-    "<p><strong>Доставка полиса осуществляется в пределах города Гомель.</strong></p>"+
-    "<p>Услуга доставки осуществляется страховым агентом по этому при встрече вы можете получить профессиональную консультацию и ответы на интересующие вас вопросы.</p>"+
-    "<p><strong>Доставка полисов производится бесплатно при условии размера страхового взноса:</strong></p>"+
-    "<ul>"+
-    "<li>страхование КАСКО;</li>"+
-    "<li>по добровольным видам страхования - от 200 рублей.</li>"+
-    "</ul>"+
-    "<p><strong>В иных случаях стоимость доставки составляет 4 рубля.</strong></p>"+
-    "<p>Обращения рассматриваются:<br> пн.-вс. 8.30 - 17.30</p>"+
-    "<p>Доставка осуществляется:<br> пн.-пт. 9.00 -16.00, сб. 10.00-16.00</p>"
-  });
-
-  $('.calc').popover({
-    placement: 'left',
-    trigger: trig,
-    title: 'Страховой калькулятор'
-  });
-
-  $('.feedback').popover({
-    placement: 'right',
-    trigger: trig,
-    title: 'Обратная связь'
-  });
-
     //АКТИВНЫЕ ВКЛАДКИ
     var pageHref = window.location.pathname;
     $('.navbar-nav li a, .nav.flex-column a').removeClass('active');
-    $('.navbar-nav .dropdown-menu a, .nav.flex-column a').each(function(){ // для каждой ссылки
+    $('.navbar-nav a, .navbar-nav .dropdown-menu a, .nav.flex-column a').each(function(){ // для каждой ссылки
         var linkHref = $(this).attr('href');//получаем href
         if (linkHref == pageHref){//сравниваем полученное из адресной строки с href ссылки
             // при совпадении присваиваем класс - какому элементу хотите?????
-            $(this).closest('.navbar-nav li a, .nav.flex-column a').addClass('active');
+            $(this).closest('.navbar-nav li a.dropdown-item, .nav.flex-column a').addClass('active');
+            $(this).closest('.navbar-nav li a').css('color', 'rgba(255, 255, 255, 1)');
             $(this).parents('.dropdown-menu').prev('.nav-link').css('color', 'rgba(255, 255, 255, 1)');
         }
     });
+    // alert(pageHref);
+    // alert(linkHref);
 
-
-    //Скрытие модального окна
-    $('#optima').click(function(){
-      // alert("Ok")
-      $('#modal_kasko-optima').modal('hide');
-      $('#modal').modal('show');
-    })
 
 
     //Скролинг вверх

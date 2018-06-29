@@ -32,19 +32,9 @@ $container=$containerBuilder->build();
 
 
 $dispatcher=FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
-  $r->get('/', ['App\Controllers\HomeController', 'index']);
+  $r->get('/', ['App\Controllers\HomeController', 'main']);
   $r->get('/contact', ['App\Controllers\HomeController', 'contact']);
-
-  //Виды страхования
-  $r->get('/children', ['App\Controllers\HomeController', 'children']);
-  $r->get('/life_1', ['App\Controllers\HomeController', 'life_1']);
-  $r->get('/life_2', ['App\Controllers\HomeController', 'life_2']);
-  $r->get('/pension_1', ['App\Controllers\HomeController', 'pension_1']);
-  $r->get('/pension_2', ['App\Controllers\HomeController', 'pension_2']);
-  $r->get('/autokasko', ['App\Controllers\HomeController', 'autokasko']);
-  $r->get('/property', ['App\Controllers\HomeController', 'property']);
-  $r->get('/tourism', ['App\Controllers\HomeController', 'tourism']);
-  $r->get('/health', ['App\Controllers\HomeController', 'health']);
+  $r->get('/page', ['App\Controllers\HomeController', 'page']);
 });
 
 // Fetch method and URI from somewhere

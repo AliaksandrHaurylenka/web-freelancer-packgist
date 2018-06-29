@@ -23,6 +23,7 @@ class Database
     $this->pdo=$pdo;
   }
 
+  // Вывод всего
   function all($table)
   {
     $select = $this->queryFactory->newSelect();
@@ -36,15 +37,14 @@ class Database
     return $result;
   }
 
+  // Вывод всего с условием
   function allWhere($table, $col, $attachment)
   {
     $select = $this->queryFactory->newSelect();
     $select->cols(['*'])
         ->from($table)
         ->where("$col = :$attachment")
-//        ->where('attachment = :attachment')
         ->bindValue("$attachment", $attachment);
-//        ->bindValue('attachment', $attachment);
 
     $sth = $this->pdo->prepare($select->getStatement());
     $sth->execute($select->getBindValues());
@@ -53,6 +53,8 @@ class Database
     return $result;
   }
 
+
+  //Вывод одного
   function getOne($table, $col, $val)
   {
     $select = $this->queryFactory->newSelect();

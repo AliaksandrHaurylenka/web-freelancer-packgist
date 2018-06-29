@@ -22,6 +22,9 @@
       </div>
     </li>
   <? endforeach; ?>
+  <li class="nav-item">
+    <a class="nav-link" href="/contact">Контакты</a>
+  </li>
 </ul>
 
 <div class="contact my-2 hidden-md-down">

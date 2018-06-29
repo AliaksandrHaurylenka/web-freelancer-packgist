@@ -24,60 +24,20 @@ class HomeController {
   }
 
 
-  function index()
+  function main()
   {
     $slides = $this->database->all('slide');
 //    dd($slides);
-    echo $this->views->render('index', compact('slides'));
-  }
-
-  function children()
-  {
-    echo $this->views->render('children');
+    echo $this->views->render('pages/main', compact('slides'));
   }
 
   function contact()
   {
-    echo $this->views->render('contact');
+    echo $this->views->render('pages/contact');
   }
 
-  function life_1()
+  function page()
   {
-    echo $this->views->render('life_1');
-  }
-
-  function life_2()
-  {
-    echo $this->views->render('life_2');
-  }
-
-  function pension_1()
-  {
-    echo $this->views->render('pension_1');
-  }
-
-  function pension_2()
-  {
-    echo $this->views->render('pension_2');
-  }
-
-  function autokasko()
-  {
-    echo $this->views->render('autokasko');
-  }
-
-  function property()
-  {
-    echo $this->views->render('property');
-  }
-
-  function health()
-  {
-    echo $this->views->render('health');
-  }
-
-  function tourism()
-  {
-    echo $this->views->render('tourism');
+    echo $this->views->render('pages/page');
   }
 } 

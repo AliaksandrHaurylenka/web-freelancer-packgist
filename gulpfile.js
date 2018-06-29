@@ -23,7 +23,7 @@ gulp.task('config-js', function () {
         'web/js/config.js'
     ])
         .pipe(concat('config.min.js'))
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest('web/js'));
 });
 
@@ -31,7 +31,8 @@ gulp.task('js', ['config-js'], function () {
     return gulp.src([
         'web/libs/jquery/dist/jquery.min.js',
         'web/libs/scrollup-master/dist/jquery.scrollUp.min.js',
-        'web/libs/bootstrap/bootstrap.js'
+        'web/libs/bootstrap/bootstrap.js',
+        'web/libs/bootstrap/holder.min.js',
     ])
         // .pipe(sourcemaps.init()) //Инициализируем sourcemap
         .pipe(concat('scripts.min.js'))
@@ -43,7 +44,7 @@ gulp.task('js', ['config-js'], function () {
 
 gulp.task('browser-sync', function () {
     browserSync({
-        proxy: "belgosstrah",//надо менять в соответствии с сервером
+        proxy: "tmp-packagist-gulp",//надо менять в соответствии с сервером
         /*server: {
          baseDir: 'app'
          },*/
@@ -65,7 +66,7 @@ gulp.task('scss', function () {
 //наблюдение за изменениями в файлах
 gulp.task('watch', ['scss', 'js', 'browser-sync'], function () {
     gulp.watch('web/scss/**/*.scss', ['scss']);
-    gulp.watch(['libs/**/*.js', 'app/js/config.js'], ['js']);
+    gulp.watch(['libs/**/*.js', 'web/js/config.js'], ['js']);
     gulp.watch('app/views/blocks/**/*.php', browserSync.reload);
     gulp.watch('app/views/*.php', browserSync.reload);
 });
@@ -110,7 +111,6 @@ gulp.task('build', ['removedist', 'imagemin', 'scss', 'js'], function () {
     var buildJs = gulp.src([
         'web/js/scripts.min.js',
         'web/js/config.min.js',
-        'web/js/tether.min.js'
     ]).pipe(gulp.dest('dist/web/js'));
 
 

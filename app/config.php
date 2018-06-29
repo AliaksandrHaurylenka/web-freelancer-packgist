@@ -1,6 +1,6 @@
 <?php
 return [
-    "logo" => "Страховка online",
+    "logo" => "Логотип",
     "views_path"    =>  "../app/views/",
     "mail"  =>  [
         "smtp"  =>  "smtp.gmail.com",
@@ -12,7 +12,7 @@ return [
     "database"  =>  [
         "driver"    =>  "mysql",
         "host"  =>  "localhost",
-        "database_name" =>  "insurance",
+        "database_name" =>  "tmp-packagist-gulp",
         "username"  =>  "root",
         "password"  =>  "",
       //Ostinger
