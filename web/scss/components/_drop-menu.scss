@@ -1,0 +1,23 @@
+.drop-inline {
+	display: inline;
+	button {
+		padding: 0;
+		border: none;
+		font-family: 'font_sansation_bold';
+		color: #b1b1b1;
+		background-color: #fff;
+		&:hover {
+		      color: $accent;
+		    }
+	}
+	a {
+		&:hover {
+	      color: $accent;
+	    }
+	}	
+	
+}
+
+.bread_link_php {
+	color: #868686 !important;
+}

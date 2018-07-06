@@ -1,1 +1,5 @@
+@include font-face("font_regular", "/fonts/RobotoRegular/RobotoRegular");
+@include font-face("font_bold", "/fonts/RobotoBold/RobotoBold", bold);
+@include font-face("font_light", "/fonts/Roboto_Light");//ширфт по умолчанию
+@include font-face("font_sansation_bold", "/fonts/Sansation_Bold");
 @include font-face("fontAwesome", "/fonts/FontAwesome/fontawesome-webfont");

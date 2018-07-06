@@ -1,0 +1,33 @@
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 380px){
+	// Прокрутчик экрана
+	#scrollUp {
+	  bottom: $font-size*5.5;
+	  // right: 20px;
+	  
+	}
+
+	// футер
+	.counter {
+		display: none;
+	}
+
+  //  вкладка где отображается одна работа
+  .one_work_desc_mobile {
+    .one_work_to_do_mobile {
+      font-size: $font-size - .1rem;
+      padding-right: 2px;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+// таблица прайс цен
+  .table-price td,
+  .table-price th {
+  	padding: .4rem
+  }
+
+
+}

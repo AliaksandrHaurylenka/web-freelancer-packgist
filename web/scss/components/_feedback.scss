@@ -1,0 +1,30 @@
+.card {
+  .card-header {
+    color: #fff;
+    background-color: #227C35;
+  }    
+  .card-block {
+    .refresh-captcha {
+      cursor: pointer;
+      padding: .5rem; 
+    }
+    .btn-feedback {
+      font-size: 1rem;
+      font-weight: 400;
+      padding: .625rem 2rem;
+    }
+  }
+}
+ 
+.success {
+  color: #29b74e
+}
+.jgrowl-error {
+  background-color: #a94442 !important;
+}
+.jgrowl-success {
+  background-color: #3c763d !important;
+}
+.jgrowl-warning {
+  background-color: #8a6d3b !important;
+}

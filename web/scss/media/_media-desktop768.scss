@@ -1,0 +1,49 @@
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px){
+
+  // навигация
+  .navbar-nav.menu li {
+    padding-left: 0;
+    border-top: 1px solid #7e7e7e;
+    &:first-child {
+      border-top: none;
+    }
+  }
+//================
+
+//  вкладка где отображается одна работа
+  .one_work_desc_mobile {
+    > h2 {
+      color: #048300;
+      font-size: $font-size;
+      font-weight: bold;
+      margin: $font-size auto;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .hidden_768 {
+        display: none;
+      }
+    .one_work_h {
+      border: none;
+      margin-bottom: 0;
+    }
+    .one_work_to_do_mobile {
+      text-align: center;
+      color: #7e7e7e;
+    }
+    .one_work_h_mobile {
+      border-bottom: 1px solid #e6e7e8;
+    }
+    .align-items-center {
+      margin: $font-size auto;
+      .one_work_h {
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+//=====================================
+
+}

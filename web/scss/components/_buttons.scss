@@ -5,27 +5,14 @@
   text-decoration: none;
   background-color: $accent;
   padding: 10px 60px;
-  font-size: 1.2rem;
-  font-weight: 400;
-  letter-spacing: 0.15rem;
+  font-size: 20px;
+  font-weight: 800;
   border-radius: 2px;
   text-align: center;
   position: relative;
   outline: none; //http://htmlbook.ru/css/outline
   transition: background-color .1s ease;
   cursor: pointer;
-  &.program {
-    background-color: #0275d8;
-    &::after {
-      background-color: darken(#0275d8, 50%);
-    }
-    &:hover {
-      background-color: lighten(#0275d8, 3%);
-      &::after {
-        opacity: .22;
-      }
-    }
-  }
   &::after {
     transition: background-color .2s ease;
     position: absolute;
@@ -43,7 +30,7 @@
     color: #fff;
   }
   &:hover {
-    background-color: lighten($accent, 7%);
+    background-color: lighten($accent, 3%);
     &::after {
       opacity: .22;
     }

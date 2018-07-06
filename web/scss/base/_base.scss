@@ -1,60 +1,57 @@
 * {
   box-sizing: border-box;
   &:before, &:after {
-    box-sizing: border-box;
-  }
-  &::placeholder { //Стилизация input-placeholder
-    color: #666;
-    opacity: 1;
-  }
+      box-sizing: border-box;
+    }
 }
 
+//Стилизация input-placeholder 
+*::placeholder {
+  color: #666;
+  opacity: 1;
+}
 //=============//
-
-//Избегаем дергания экрана,
-//если одна страница со скролом,
-//а другая без
-html {
-  overflow-y: scroll;
-  overflow-x: auto;
-}
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid {
   color: #666;
 }
-
 body input:required:valid,
 body textarea:required:valid {
   color: #666;
 }
-
 html, body {
   line-height: 1.4;
+  font-family: $default-font;
   height: 100%;
 }
 
 body {
-  padding-top: 3rem;
-  color: #5a5a5a;
   font-size: 1rem;
-  min-width: 375px;
+  min-width: 320px;
   position: relative;
   overflow-x: hidden;
   opacity: 1;
 }
 
-//Страница не дергается при открытии модального окна
-body.modal-open {
-  overflow: auto;
-  padding-right: 0 !important;
+
+/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+::selection {
+  background: $accent;
+  color: $white;
 }
 
-// убираем стрелки в input при type=number
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+
+
+
+/* ===== Initializr Styles ==================================================
+ Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
+ ========================================================================== */
+body {
+  background-color: $white;
+  background: 
+    url('/img/top.jpg') top center repeat-x,
+    url('/img/slider_bg.png') center/cover;
 }
 
 // flex футер прижатый к низу https://codepen.io/Asmodey/pen/GqrVNX
@@ -63,32 +60,39 @@ input[type=number]::-webkit-outer-spin-button {
   flex-direction: column;
   height: 100%;
 }
-
 .content {
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: auto;
 }
-
-.footer {
+.footer{
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: auto;
   margin-top: 1rem;
 }
-
 //=========================
 
-
-.active {
-  background: #eceeef;
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 1rem;
+    margin-bottom: .5rem;
 }
 
-.contact {
-  color: #fff;
-  font-weight: 500;
+h1 {
+  font-size: 2rem;
+  color: $accent;
+  font-family: "font_sansation_bold";
+  margin-bottom: $font-size+.25;
+}
+h2 {
+  font-size: 1.5rem;
 }
 
-.mail {
-  cursor: pointer;
+ul {
+  li {
+    list-style: none;
+  }
 }
+
+
+

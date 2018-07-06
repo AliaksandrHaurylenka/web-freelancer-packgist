@@ -12,7 +12,7 @@ return [
     "database"  =>  [
         "driver"    =>  "mysql",
         "host"  =>  "localhost",
-        "database_name" =>  "tmp-packagist-gulp",
+        "database_name" =>  "packagist-web-freelancer",
         "username"  =>  "root",
         "password"  =>  "",
       //Ostinger

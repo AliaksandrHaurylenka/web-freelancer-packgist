@@ -30,9 +30,8 @@ gulp.task('config-js', function () {
 gulp.task('js', ['config-js'], function () {
     return gulp.src([
         'web/libs/jquery/dist/jquery.min.js',
-        'web/libs/scrollup-master/dist/jquery.scrollUp.min.js',
+        'web/libs/jquery.scrollUp.js',
         'web/libs/bootstrap/bootstrap.js',
-        'web/libs/bootstrap/holder.min.js',
     ])
         // .pipe(sourcemaps.init()) //Инициализируем sourcemap
         .pipe(concat('scripts.min.js'))
@@ -44,7 +43,7 @@ gulp.task('js', ['config-js'], function () {
 
 gulp.task('browser-sync', function () {
     browserSync({
-        proxy: "tmp-packagist-gulp",//надо менять в соответствии с сервером
+        proxy: "packagist-web-freelancer",//надо менять в соответствии с сервером
         /*server: {
          baseDir: 'app'
          },*/
@@ -68,6 +67,7 @@ gulp.task('watch', ['scss', 'js', 'browser-sync'], function () {
     gulp.watch('web/scss/**/*.scss', ['scss']);
     gulp.watch(['libs/**/*.js', 'web/js/config.js'], ['js']);
     gulp.watch('app/views/blocks/**/*.php', browserSync.reload);
+    gulp.watch('app/views/pages/**/*.php', browserSync.reload);
     gulp.watch('app/views/*.php', browserSync.reload);
 });
 

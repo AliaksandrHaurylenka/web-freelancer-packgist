@@ -1,16 +1,43 @@
+// main.scss
+// @import 'vendors/module';
+
 @import 'utils/variables';
 @import 'utils/mixins';
-
+@import 'utils/class-libs';
 
 @import "fonts";
 
 @import 'base/base';
 
+@import 'layout/navigation';
+@import 'layout/footer';
+
+
+// @import 'mobil/module';
+
+
+@import 'components/slider-bootstrap';
 @import 'components/buttons';
-@import 'components/form';
 @import 'components/scrollUp';
-
-@import 'layouts/footer';
-
+@import 'components/breadcrumbs';
+@import 'components/drop-menu';
+@import 'components/hover-transform';
+@import 'components/feedback';
 
 @import 'pages/home';
+@import 'pages/portfolio';
+@import 'pages/service';
+@import 'pages/contact';
+@import 'pages/one-work';
+
+// @import 'themes/module';
+
+@import "media/media-desktop1200"; // Всегда в конце
+@import "media/media-desktop992";
+@import "media/media-desktop768";
+@import "media/media-desktop640";
+@import "media/media-desktop575";
+@import "media/media-desktop480";
+@import "media/media-desktop380";
+@import "media/media-desktop320";
+

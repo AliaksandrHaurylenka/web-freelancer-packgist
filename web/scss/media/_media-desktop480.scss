@@ -1,0 +1,27 @@
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px){
+
+  // навигация
+  .navbar {
+    padding: 0;
+  }
+  nav .navbar-brand img {
+    max-width: 85%;
+  }
+
+  //  вкладка где отображается одна работа
+  .one_work_desc_mobile {
+    .align-items-center {
+      display: none !important;
+    }
+    a.button {
+      text-decoration: none;
+    }
+    .hidden_768 {
+        display: block;
+    }
+    .one_work_h {
+      text-align: center;
+    }
+  }
+}

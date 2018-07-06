@@ -1,0 +1,61 @@
+.line {
+    height: 1.75rem;
+    background-image: url('/img/linef.png');
+    background-position: center;
+  }
+
+.service {
+  margin: 10px 0;
+  h2 {
+    font-size: 1.5rem;
+    font-family: 'font_sansation_bold';
+    margin-bottom: 1.25rem;
+    a {
+      color: #868686;
+      text-decoration: none;
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+  ul {
+    li {
+      margin-bottom: 1rem;
+      color: #868686;
+      list-style: square;
+    }
+  }
+  .text-service {
+    p {
+      text-align: justify;
+    }
+  }    
+}
+
+// Свойсто добавляется когда курсор наводится на изображение 
+.img-hover {
+  color: $accent !important;
+}
+
+// Стили страниц Услуги
+.list-style {
+  padding-left: 1.25rem;
+  li {
+    list-style: circle;
+  }  
+}
+.quote {
+  border-left: 3px solid $accent;
+  background-color: #f1f1f1;
+  padding: .75rem;
+  line-height: 22px;
+  margin-bottom: 20px;
+  min-height: 54px;
+}
+.link-consultation {
+  color: #868686;
+  &:hover {
+    color: $accent;
+  }
+}
+// ====================

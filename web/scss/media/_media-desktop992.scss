@@ -1,0 +1,41 @@
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px){
+
+//  Портфолио - одна работа
+  .one_work {
+    padding-top: 0;
+    .one_work_h {
+      padding-bottom: 0;
+      margin-bottom: .5rem;
+      h2 {
+        font-size: 1rem;
+        margin-bottom: .5rem;
+      }
+    }
+    .one_work_to_do {
+      margin-bottom: 0;
+      h2 {
+        font-size: 1rem;
+        margin-bottom: .5rem;
+      }
+      span {
+        font-size: 1rem;
+        margin-bottom: .5rem;
+      }
+    }
+    .button {
+      font-size: $font-size;
+    }
+  }
+
+
+// Контакты
+  .layout_contacts_tables {
+    table {
+        &:first-child {
+        margin-bottom: 1rem;
+      }
+    }
+  }  
+
+}

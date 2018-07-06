@@ -1,0 +1,26 @@
+.layout_contacts_tables {
+	table {
+			&:first-child {
+			margin-bottom: 5rem;
+		}
+	}	
+	.contact_table {
+	  caption {
+	  	caption-side: top;
+	  }
+	  tr td {
+		  line-height: 1.375rem;
+		  padding: .5rem .2rem;
+		  a {
+		  	color: #868686;
+		  	&:hover {
+		  		color: #008100;
+		  	}
+		  }
+		}
+	}
+}
+.captcha {
+	margin-bottom: $font-size+0.5rem;
+}
+

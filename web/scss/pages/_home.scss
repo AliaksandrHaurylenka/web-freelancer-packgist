@@ -1,113 +1,95 @@
-/* Carousel base class */
-.carousel {
-  margin-bottom: 2rem;
-}
-
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-  z-index: 10;
-  bottom: 3rem;
-}
-
-/* Declare heights because of positioning of img element */
-.carousel-item {
-  height: 32rem;
-  background-color: #777;
-}
-
-.carousel-item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 32rem;
-}
-
-//==================================
-
-.icon {
-  text-align: center;
-  margin-bottom: 2rem;
-  a {
-    outline: none;
-  }
-}
-
-
 /* MARKETING CONTENT
 -------------------------------------------------- */
+//1-й блок
+.marketing {
+  padding-top: 4rem;
+  h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: $font-size + 0.2rem;
+    &.h2 {
+      font-size: 1.5rem;
+      text-align: center;
+      font-family: 'font_bold';
+    }
+  }
+  .line {
+    height: 1.75rem;
+    background-image: url('/img/linef.png');
+    background-position: center;
+  }
+  .main-service {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    p {
+      margin-right: .75rem;
+      margin-left: .75rem;
+      &.description_small {
+        text-align: justify;
+        text-indent: 1rem;
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+    }   
+  }
+}
 
-/* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
-  margin-bottom: 1.5rem;
+//2-й блок
+.stat {
+  background-color: #127E12;
+  padding: 2rem 0;
+  background-image: url('/img/stat_bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "font_sansation_bold", "Arial";
+  color: #fff;
   text-align: center;
-}
-.marketing h2 {
-  font-weight: normal;
-}
-.marketing .col-lg-4 p {
-  margin-right: .75rem;
-  margin-left: .75rem;
-}
-
-
-.album {
-  min-height: 50rem; /* Can be removed; just added for demo purposes */
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  background-color: #f7f7f7;
-}
-
-.card {
-  float: left;
-  width: 33.333%;
-  padding: .75rem;
-  margin-bottom: 2rem;
-  border: 0;
-}
-
-.card > img {
-  margin-bottom: .75rem;
-}
-
-.card-text {
-  font-size: 85%;
-}
-
-
-
-/* RESPONSIVE CSS
--------------------------------------------------- */
-
-@media only screen and (max-width: 992px) {
-  .button {
-    padding: 10px 30px;
-    font-size: 1.1rem;
+  .num {
+    font-size: $font-size+0.25rem;
+    span {
+      font-size: 3.125rem
+    }
   }
 }
 
-@media only screen and (max-width: 780px) {
-  .blockquote {
-    padding: 0.5rem 0.5rem;
+
+//3-й блок  
+.works {
+  img{
+    &:hover {
+      transition: all 0.3s ease;
+    }
+  }
+  .work-main {
+    text-align: center;
+    h2 {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: $font-size;
+    }
+    a {
+      color: #048300;
+      font-family: $default-font;
+      font-size: $font-size + 0.2rem;
+      text-decoration: none;
+    }
+  }  
+}  
+
+
+/* Shrink - уменьшение картинки в блоке ПОРТФОЛИО */
+.shrink img {
+  display: inline-block;
+  transition-duration: 0.3s;
+  transition-property: transform;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  &:hover,
+  &:focus {
+    transform: scale(0.9);
   }
 }
 
-@media only screen and (max-width: 575px) {
-  .carousel {
-    display: none;
-  }
-}
 
-/*@media only screen and (min-width: 768px) {
-  .navbar-toggleable-md .navbar-toggler {
-    display: none;
-  }
-
-  .navbar-toggleable-md .navbar-collapse {
-    display: -webkit-box!important;
-    display: -webkit-flex!important;
-    display: -ms-flexbox!important;
-    display: flex!important;
-    width: 100%;
-  }
-}*/

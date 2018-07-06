@@ -23,7 +23,7 @@
     <?= $this->section('content') ?>
   </div><!--/.content-->
 
-  <? $this->insert('blocks/footer'); ?>
+<!--  --><?// $this->insert('blocks/footer'); ?>
 </div><!--wrap-->
 
 
