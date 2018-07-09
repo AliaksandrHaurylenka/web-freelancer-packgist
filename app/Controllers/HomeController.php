@@ -26,7 +26,9 @@ class HomeController {
 
   function main()
   {
-    echo $this->views->render('pages/main');
+    $slides = $this->database->all('slide');
+//    dd($services);
+    echo $this->views->render('pages/main', compact('slides'));
   }
 
   function contact()

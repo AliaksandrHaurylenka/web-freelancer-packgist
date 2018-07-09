@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <title><?= $this->e($title) ?></title>
   <meta name="description" content="<?= $this->e($description) ?>">
-  <meta name="keywords" content="страховка, страховка online, страховка онлайн, автокаско, страхование имущества, страхование туристов, страхование здоровья, страхование детей, страхование пенсионеров, стравита, белросстрах">
+  <meta name="keywords" content="веб разработка, верстка сайтов">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/img/favicon/favicon.ico" type="image/x-icon">
   <link href='https://fonts.google.com/specimen/Open+Sans?selection.family=Open+Sans' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/libs.css">
   <!-- Обратная связь -->
@@ -18,12 +18,14 @@
 <div class="wrap">
   <div class="content">
 
-    <? $this->insert('blocks/nav-carousel'); ?>
+    <div class="container">
+      <? $this->insert('blocks/header') ; ?>
+    </div>
 
     <?= $this->section('content') ?>
   </div><!--/.content-->
 
-<!--  --><?// $this->insert('blocks/footer'); ?>
+  <? $this->insert('blocks/footer'); ?>
 </div><!--wrap-->
 
 

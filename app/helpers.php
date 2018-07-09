@@ -22,6 +22,18 @@ function menuDrop($table, $col, $company)
   return $menu->allWhere($table, $col,  $company);
 }
 
+function services()
+{
+  $services = db();
+  return $services->all('services');
+}
+
+function works()
+{
+  $works = db();
+  return $works->all('portfolio_full');
+}
+
 function config($field)
 {
   $config = require '../app/config.php';

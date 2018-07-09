@@ -1,12 +1,12 @@
 <?php $this->layout('layout',
     [
-        'title' => 'Title',
-        'description' => 'Страхование online - это удобный способ без особых усилий застраховать себя, имущество.'
+        'title' => 'Web freelancer',
+        'description' => 'Разработка, продвижение и дизайн сайтов. Верстка сайтов HTML, CSS, PHP/MySQL, фреймворк Yii2, Laravel, cms Wordpress, Joomla.'
     ])
 ?>
 
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide hidden-xs-down" data-ride="carousel">
   <ol class="carousel-indicators">
     <? foreach ($slides as $li): ?>
       <li data-target="#myCarousel" data-slide-to="<?= $li['id']-1; ?>" class="<?= $li['class']; ?>"></li>
@@ -22,7 +22,7 @@
           <div class="carousel-caption d-none d-md-block text-center">
             <h1><?= $slide['name']; ?></h1>
             <p><?= $slide['description']; ?></p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            <p><a class="btn btn-lg button" href="<?= $slide['btn-href']; ?>" role="button">Sign up today</a></p>
           </div>
         </div>
       </div>
@@ -39,11 +39,9 @@
   </a>
 </div>
 
-
-<div class="container marketing">
-  <? $this->insert('blocks/main/block_1'); ?>
-  <hr class="featurette-divider">
+<? $this->insert('blocks/main/block_1'); ?>
+<? $this->insert('blocks/main/green-line-main'); ?>
   <? $this->insert('blocks/main/block_2'); ?>
-</div>
+
 
 

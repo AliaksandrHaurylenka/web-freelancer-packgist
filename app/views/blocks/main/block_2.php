@@ -1,46 +1,19 @@
-<div class="album text-muted">
-  <div class="container">
-
-    <div class="row">
-      <div class="card">
-        <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-      <div class="card">
-        <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-      <div class="card">
-        <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-
-      <div class="card">
-        <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-      <div class="card">
-        <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-      <div class="card">
-        <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-
-      <div class="card">
-        <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-      <div class="card">
-        <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-      <div class="card">
-        <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-
-  </div>
+<!--3-й блок-->
+<div class="container marketing">
+  <h2 class="h2">Портфолио</h2>
+  <div class="line"></div>
+  <div class="row works">
+    <? foreach(works() as $work): ?>
+      <div class="col-md-4 flex-column justify-content-center">
+        <a href="<?= $work['link']; ?>" class="shrink">
+          <img class="img-thumbnail"
+               src="/img/works/<?= $work['img']; ?>"
+               alt="<?= $work['name']; ?>">
+        </a>
+        <div class="work-main">
+          <h2><a href="<?= $work['link']; ?>"><?= $work['name']; ?></a></h2>
+        </div>
+      </div><!-- /.col-lg-3 -->
+    <? endforeach; ?>
+  </div><!-- /.row -->
 </div>

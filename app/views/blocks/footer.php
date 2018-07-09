@@ -1,51 +1,49 @@
-<!-- FOOTER -->
-<div class="footer pb-4">
-  <footer class="container">
-<!--    <p class="float-right mt-2"><a href="#" class="company">Наверх</a></p>-->
+<?php
+/**
+ * Массив вывода меню
+ * Передача данных методом GET
+ * Настройка в файле bootstrap.php
+ */
+$menu =
+    [
+        ['href'=>"/portfolio", 'link'=>'Портфолио'],
+        ['href'=>"/service", 'link'=>'Услуги'],
+        ['href'=>'/contact', 'link'=>'Контакты'],
+    ];
+?>
 
-    <div class="row">
-      <p class="col-sm-4 mt-2">&copy; 2017 - <?= strftime('%Y'); ?> <a href="/" class="company"><?= config('logo'); ?></a></p>
+<footer>
+    <div class="container d-flex pt-3 pb-5 justify-content-between">
 
-      <div class="col">
-        <nav class="nav flex-column">
-          <?php $menuDrop = menuDrop('menu', 'name_en', 'belrosstrah'); ?>
-          <?php foreach ($menuDrop as $company): ?>
-          <p class="lead my-2 pb-2"><?= $company['name']; ?></p>
-          <?php endforeach; ?>
+      <ul class="d-flex flex-column align-items-start menu-footer">
+        <? foreach($menu as $li): ?>
+          <li>
+            <a href="<?= $li['href']; ?>">
+              <i id='<?= $li['id_i']; ?>' class='fa fa-lg <?= $li['i']; ?>' aria-hidden='true'></i>
+              <?= $li['link']; ?>
+            </a>
+          </li>
+        <? endforeach; ?>
+      </ul>
 
-          <?php
-          $drop = menuDrop('menu-dropdown','attachment','belrosstrah');
-            foreach ($drop as $item) {
-              echo '<a class="nav-link pl-0" href="' . $item['link'] . '">' . $item['name'] . '</a>';
-            }
-          ?>
-        </nav>
-      </div>
 
-      <div class="col">
-        <nav class="nav flex-column">
-          <?php $menuDrop = menuDrop('menu', 'name_en', 'stravita'); ?>
-          <?php foreach ($menuDrop as $company): ?>
-            <p class="lead my-2 pb-2"><?= $company['name']; ?></p>
-          <?php endforeach; ?>
-
-          <?php
-          $drop = menuDrop('menu-dropdown','attachment','stravita');
-          foreach ($drop as $item) {
-            echo '<a class="nav-link pl-0" href="' . $item['link'] . '">' . $item['name'] . '</a>';
-          }
-          ?>
-        </nav>
-      </div>
-
-      <div class="col mt-3">
-        <div class="float-right">
-          <div class="counter mb-3">
-            Счетчики
-          </div>
+      <div class="d-flex flex-column align-items-center">
+        <div class="copy">
+          &copy; Web-freelancer<br>2017 - <?= strftime("%Y") ?>
+        </div>
+        <div class="d-flex social mt-3">
+            <a href="https://plus.google.com/" rel="publisher" target="_blank"><span id="g"></span></a>
+            <a href="https://www.facebook.com/" target="_blank"><span id="fb"></span></a>
+            <a href="http://vk.com/" target="_blank"><span id="vk"></span></a>
+            <a href="https://twitter.com/" target="_blank"><span id="tw"></span></a>
+            <div class="clear"></div>
         </div>
       </div>
-    </div>
 
-  </footer>
-</div>
+
+      <div class="counter">
+        Счетчики
+      </div>
+
+    </div>
+</footer>

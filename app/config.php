@@ -1,6 +1,6 @@
 <?php
 return [
-    "logo" => "Логотип",
+    "logo" => "/img/logo.png",
     "views_path"    =>  "../app/views/",
     "mail"  =>  [
         "smtp"  =>  "smtp.gmail.com",
