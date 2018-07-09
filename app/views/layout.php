@@ -17,11 +17,9 @@
 
 <div class="wrap">
   <div class="content">
-
     <div class="container">
       <? $this->insert('blocks/header') ; ?>
     </div>
-
     <?= $this->section('content') ?>
   </div><!--/.content-->
 
