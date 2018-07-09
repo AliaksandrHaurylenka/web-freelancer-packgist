@@ -41,7 +41,7 @@
 
 <? $this->insert('blocks/main/block_1'); ?>
 <? $this->insert('blocks/main/green-line-main'); ?>
-  <? $this->insert('blocks/main/block_2'); ?>
+<? $this->insert('blocks/main/block_2'); ?>
 
 
 
