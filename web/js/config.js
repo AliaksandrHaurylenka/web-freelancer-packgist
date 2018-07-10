@@ -13,6 +13,9 @@ $(function(){
   // alert(pageHref);
   // alert(linkHref);
 
+  //Красный цвет суббота, воскресение во вкладке Контакты
+  $('.day-week tr:nth-child(n+2) td strong').addClass('text-danger');
+
 
   //Скролинг вверх
   $.scrollUp(

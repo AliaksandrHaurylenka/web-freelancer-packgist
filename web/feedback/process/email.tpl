@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+  <link rel="stylesheet" href="../css/main.min.css">
   <style>
   table {
-    width: 70%;
+    width: 30%;
     margin-bottom: 1rem;
     border-collapse: collapse;
   }

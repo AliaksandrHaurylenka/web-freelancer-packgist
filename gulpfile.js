@@ -32,6 +32,7 @@ gulp.task('js', ['config-js'], function () {
         'web/libs/jquery/dist/jquery.min.js',
         'web/libs/jquery.scrollUp.js',
         'web/libs/bootstrap/bootstrap.js',
+        'web/libs/jgrowl/jquery.jgrowl.min.js',
     ])
         // .pipe(sourcemaps.init()) //Инициализируем sourcemap
         .pipe(concat('scripts.min.js'))
