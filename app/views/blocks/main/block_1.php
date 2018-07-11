@@ -4,7 +4,7 @@
   <div class="line"></div>
   <div class="row">
 
-    <? foreach(services() as $service): ?>
+    <? foreach(all('services') as $service): ?>
       <div class="col-md-4 d-flex flex-column justify-content-between main-service">
         <a href="<?= $service['link'] ?>">
           <img class="img-thumbnail"

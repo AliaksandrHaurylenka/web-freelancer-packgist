@@ -10,11 +10,12 @@ function db()
   return $result;
 }
 
-function menu()
+function all($table)
 {
-  $menu = db();
-  return $menu->all('menu');
+  $all = db();
+  return $all->all($table);
 }
+
 
 function menuDrop($table, $col, $company)
 {
@@ -22,17 +23,13 @@ function menuDrop($table, $col, $company)
   return $menu->allWhere($table, $col,  $company);
 }
 
-function services()
+
+function getOne($table, $col, $val)
 {
   $services = db();
-  return $services->all('services');
+  return $services->getOne($table, $col, $val);
 }
 
-function works()
-{
-  $works = db();
-  return $works->all('portfolio_full');
-}
 
 function config($field)
 {

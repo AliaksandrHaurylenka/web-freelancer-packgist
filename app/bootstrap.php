@@ -34,7 +34,7 @@ $container=$containerBuilder->build();
 $dispatcher=FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
   $r->get('/', ['App\Controllers\HomeController', 'main']);
   $r->get('/contact', ['App\Controllers\HomeController', 'contact']);
-  $r->get('/page', ['App\Controllers\HomeController', 'page']);
+  $r->get('/service', ['App\Controllers\HomeController', 'service']);
 });
 
 // Fetch method and URI from somewhere

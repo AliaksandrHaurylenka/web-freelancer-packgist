@@ -36,8 +36,17 @@ class HomeController {
     echo $this->views->render('pages/contact');
   }
 
-  function page()
+  function service()
   {
-    echo $this->views->render('pages/page');
+    $services = $this->database->all('services');
+//    dd($services);
+    echo $this->views->render('pages/service', compact('services'));
+  }
+
+  function portfolio()
+  {
+    $slides = $this->database->all('slide');
+    //    dd($services);
+    echo $this->views->render('pages/main', compact('slides'));
   }
 } 
