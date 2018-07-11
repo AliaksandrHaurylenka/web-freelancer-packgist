@@ -31,6 +31,13 @@ function getOne($table, $col, $val)
 }
 
 
+function limit($table, $col, $num)
+{
+  $all = db();
+  return $all->limit($table, $col, $num);
+}
+
+
 function config($field)
 {
   $config = require '../app/config.php';

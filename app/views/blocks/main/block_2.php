@@ -3,7 +3,7 @@
   <h2 class="h2">Портфолио</h2>
   <div class="line"></div>
   <div class="row works">
-    <? foreach(all('portfolio_full') as $work): ?>
+    <? foreach(limit('portfolio_full', 'id DESC', 9) as $work): ?>
       <div class="col-md-4 flex-column justify-content-center">
         <a href="<?= $work['link']; ?>" class="shrink">
           <img class="img-thumbnail"
