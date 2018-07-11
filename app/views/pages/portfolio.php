@@ -1,11 +1,9 @@
-<?
-$works = selectServicesPortfolio('`portfolio_full`');
-if(!is_array($works)){
-  echo "Произошла ошибка при выводе работ";
-  exit;
-}
+<?php $this->layout('layout',
+    [
+        'title' => 'Web-freelancer.Портфолио',
+        'description' => 'Разработка, продвижение и дизайн сайтов. Верстка сайтов HTML, CSS, PHP/MySQL, фреймворк Yii2, Laravel, cms Wordpress, Joomla.'
+    ])
 ?>
-
 <div class="container">
   <div class="breadcrumbs">
     // <a href="/">Главная</a> / Портфолио

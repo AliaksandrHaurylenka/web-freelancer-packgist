@@ -35,6 +35,10 @@ $dispatcher=FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
   $r->get('/', ['App\Controllers\HomeController', 'main']);
   $r->get('/contact', ['App\Controllers\HomeController', 'contact']);
   $r->get('/service', ['App\Controllers\HomeController', 'service']);
+  $r->get('/portfolio', ['App\Controllers\HomeController', 'portfolio']);
+  $r->get('/site-analytics', ['App\Controllers\HomeController', 'site-analytics']);
+  $r->get('/site-creation', ['App\Controllers\HomeController', 'site-creation']);
+  $r->get('/site-design', ['App\Controllers\HomeController', 'site-design']);
 });
 
 // Fetch method and URI from somewhere

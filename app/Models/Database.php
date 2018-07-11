@@ -69,4 +69,21 @@ class Database
 
     return $result;
   }
+
+
+  // Вывод определенного количества
+  function limit($table, $col, $num)
+  {
+    $select = $this->queryFactory->newSelect();
+    $select->cols(['*'])
+        ->from($table)
+        ->orderBy([$col])
+        ->limit($num);
+
+    $sth = $this->pdo->prepare($select->getStatement());
+    $sth->execute($select->getBindValues());
+    $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;
+  }
 }

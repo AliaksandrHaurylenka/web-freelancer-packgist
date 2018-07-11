@@ -45,8 +45,8 @@ class HomeController {
 
   function portfolio()
   {
-    $slides = $this->database->all('slide');
+    $works = $this->database->limit('portfolio_full', 'id DESC', 9);
     //    dd($services);
-    echo $this->views->render('pages/main', compact('slides'));
+    echo $this->views->render('pages/portfolio', compact('works'));
   }
 } 
