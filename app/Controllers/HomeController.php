@@ -46,7 +46,25 @@ class HomeController {
   function portfolio()
   {
     $works = $this->database->limit('portfolio_full', 'id DESC', 9);
-    //    dd($services);
+    //    dd($works);
     echo $this->views->render('pages/portfolio', compact('works'));
+  }
+
+  function design()
+  {
+    $design = $this->database->allWhere('price', 'service', 'design');
+//        dd($design);
+    echo $this->views->render('pages/site-design', compact('design'));
+  }
+
+  function creation()
+  {
+    $verstka = $this->database->allWhere('price', 'service', 'verstka');
+    echo $this->views->render('pages/site-creation', compact('verstka'));
+  }
+
+  function analytics()
+  {
+    echo $this->views->render('pages/site-analytics');
   }
 } 

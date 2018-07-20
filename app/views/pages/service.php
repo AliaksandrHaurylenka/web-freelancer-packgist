@@ -5,7 +5,16 @@
 ?>
 <div class="container">
   <div class="breadcrumbs">
-      // <a href="/">Главная</a> / Наши услуги
+      // <a href="/">Главная</a>
+    / <div class='dropdown open drop-inline'>
+      <button class='dropdown-toggle' id='dropdownMenu2'>Услуги</button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <? foreach(all('services') as $menu): ?>
+          <a href='<?= $menu['link']?>' class='dropdown-item'><?= $menu['name']?></a>
+        <? endforeach; ?>
+      </div>
+    </div>
+    / Наши услуги
   </div>
  	<h1>Наши услуги</h1>
 	

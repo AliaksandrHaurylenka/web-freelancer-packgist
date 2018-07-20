@@ -44,6 +44,35 @@ $(function(){
 // =========================================
 
 
+// Выпадающее меню при наведении мышки
+  $('.drop-inline').hover(function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn();
+  }, function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut();
+  });
+// =========================================
+
+  /**
+   * Активная вкладка Портфолио, Услуги
+   * Забираем с адресной строки лишь часть слова one-work, либо слова site;
+   * В данном случае жесткие условия на именования файлов услуг: должны начинаться со слова site
+   * Сравниваем две переменные.
+   * При совпадении присваиваем класс active тегу a вкладок Портфолио, Услуги
+   */
+  var pageSerch = window.location.pathname;
+  var portfolio = pageSerch.substr(6, 8);
+  var services = pageSerch.substr(1, 4);
+  // alert(services);
+  var work = 'one-work';
+  var service = 'site';
+  if (portfolio == work){
+    $('i[id="portfolio"]').parent().addClass('active');
+  }else if (services == service){
+    $('i[id="service"]').parent().addClass('active');
+  }
+
+
+
   //Скролинг вверх
   $.scrollUp(
       {

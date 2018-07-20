@@ -17,13 +17,6 @@ function all($table)
 }
 
 
-function menuDrop($table, $col, $company)
-{
-  $menu = db();
-  return $menu->allWhere($table, $col,  $company);
-}
-
-
 function getOne($table, $col, $val)
 {
   $services = db();
