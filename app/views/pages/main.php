@@ -22,7 +22,7 @@
           <div class="carousel-caption d-none d-md-block text-center">
             <h1><?= $slide['name']; ?></h1>
             <p><?= $slide['description']; ?></p>
-            <p><a class="btn btn-lg button" href="<?= $slide['btn-href']; ?>" role="button">Sign up today</a></p>
+            <p><a class="btn btn-lg button" href="#" role="button">Sign up today</a></p>
           </div>
         </div>
       </div>

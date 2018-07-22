@@ -50,7 +50,7 @@ $timetable=[['day'=>'ПН - ПТ', 'time'=>'с 10:00 до 18:00'], ['day'=>'СБ
       </div>
     </div>
     <a href="#" name="feedback"></a>
-    <?php include '/feedback/index.php'; ?>
+    <?php include 'feedback/index.php'; ?>
   </div><!--row-->
 
 </div><!--container-->

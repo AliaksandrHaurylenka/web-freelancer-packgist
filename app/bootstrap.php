@@ -15,10 +15,11 @@ $containerBuilder->addDefinitions(
     $driver = config('database.driver');
     $host = config('database.host');
     $database_name = config('database.database_name');
+    $charset = config('database.charset');
     $username = config('database.username');
     $password = config('database.password');
 
-    return new PDO("$driver:host=$host;dbname=$database_name", $username, $password);
+    return new PDO("$driver:host=$host; dbname=$database_name; charset=$charset", $username, $password);
   },
 
   \League\Plates\Engine::class=>function () {

@@ -13,6 +13,7 @@ return [
       "driver" => "mysql",
       "host" => "localhost",
       "database_name" => "packagist-web-freelancer",
+      "charset" => "utf8mb4",
       "username" => "root",
       "password" => "",
     //Ostinger

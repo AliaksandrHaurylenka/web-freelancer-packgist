@@ -44,7 +44,7 @@ gulp.task('js', ['config-js'], function () {
 
 gulp.task('browser-sync', function () {
     browserSync({
-        proxy: "packagist-web-freelancer",//надо менять в соответствии с сервером
+        proxy: "packagist-web-freelancer.test",//надо менять в соответствии с сервером
         /*server: {
          baseDir: 'app'
          },*/
