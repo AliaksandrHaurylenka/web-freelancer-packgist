@@ -13,6 +13,18 @@ $(function(){
   // alert(pageHref);
   // alert(linkHref);
 
+  //Главная: наводим на ссылку работ происходит анимация
+  $('.work-main').hover(function(){
+    $(this).prev().find('img').css({
+      'transform': 'scale(0.9)'
+    })
+  }, function(){
+    $(this).prev().find('img').css({
+      'transform': 'translateZ(0)'
+    })
+  });
+// =======================================
+
   //Красный цвет суббота, воскресение во вкладке Контакты
   $('.day-week tr:nth-child(n+2) td strong').addClass('text-danger');
 

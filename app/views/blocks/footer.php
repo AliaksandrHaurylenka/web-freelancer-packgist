@@ -12,7 +12,7 @@ $menu =
     ];
 ?>
 
-<footer>
+<footer class="mt-3">
     <div class="container d-flex pt-3 pb-5 justify-content-between">
 
       <ul class="d-flex flex-column align-items-start menu-footer">
