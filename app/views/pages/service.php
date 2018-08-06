@@ -1,24 +1,13 @@
-<?php $this->layout('layout',
+<?php $this->layout('layout-services',
     ['title'=>'Web-freelancer.Услуги',
-        'description'=>'Услуги'
+        'description'=>'Услуги',
+      'service'=>'Наши услуги'
     ]);
 ?>
-<div class="container">
-  <div class="breadcrumbs">
-      // <a href="/">Главная</a>
-    / <div class='dropdown open drop-inline'>
-      <button class='dropdown-toggle' id='dropdownMenu2'>Услуги</button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-        <? foreach(all('services') as $menu): ?>
-          <a href='<?= $menu['link']?>' class='dropdown-item'><?= $menu['name']?></a>
-        <? endforeach; ?>
-      </div>
-    </div>
-    / Наши услуги
-  </div>
- 	<h1>Наши услуги</h1>
+
+<h1>Наши услуги</h1>
 	
-<!--	--><?php //foreach (servicesOne('services', 'img', 'service_dev') as $service): ?>
+
 	<?php foreach ($services as $service): ?>
 		<div class="line"></div>
 	  <div class="row service">
@@ -53,4 +42,3 @@
 		</div><!--class="d-flex service"-->	
 	<?php endforeach; ?>
 	<div class="line"></div>
-</div><!--class="container"-->

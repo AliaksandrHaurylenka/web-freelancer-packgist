@@ -4,6 +4,10 @@
     background-position: center;
   }
 
+.active-drop {
+  background-color: $accent;
+}
+
 .service {
   margin: 10px 0;
   h2 {

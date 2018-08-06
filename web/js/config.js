@@ -10,8 +10,20 @@ $(function(){
       $(this).closest('.menu li a').addClass('active').removeClass('float-shadow');
     }
   });
-  // alert(pageHref);
-  // alert(linkHref);
+
+  var pageHrefDrop = window.location.pathname;
+  $('.navbar-nav li a').removeClass('active-drop');
+  $('.navbar-nav .dropdown-menu a').each(function(){ // для каждой ссылки
+    var linkHrefDrop = $(this).attr('href');//получаем href
+    var linkHrefDropWork = '/work/'+$(this).attr('href');//получаем href
+    // alert(linkHrefDrop);
+    if (linkHrefDrop == pageHrefDrop || linkHrefDropWork == pageHrefDrop){//сравниваем полученное из адресной строки с href ссылки
+      // при совпадении присваиваем класс - какому элементу хотите?????
+      $(this).closest('.navbar-nav li a').addClass('active-drop');
+    }
+  });
+  // alert(pageHrefDrop);
+
 
   //Главная: наводим на ссылку работ происходит анимация
   $('.work-main').hover(function(){

@@ -1,30 +1,15 @@
-<?php $this->layout('layout',
+<?php $this->layout('layout-work',
     [
         'title' => 'Портфолио.' . $one_work['name'],
-        'description' => 'Портфолио'
+        'description' => 'Портфолио',
+      'work' => $one_work['name']
     ])
 ?>
 
 
-<div class="container">
-  <div class="breadcrumbs">
-<!--    // <a href="/">Главная</a> / --><?// dropMenuDB('`portfolio_full`', '<a href="index.php?page=portfolio">Портфолио</a>'); ?><!-- / --><?//= $one_work['name']; ?>
-    // <a href="/">Главная</a>
-    / <div class='dropdown open drop-inline'>
-      <button class='dropdown-toggle' id='dropdownMenu2'>Портфолио</button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-        <? foreach(limit('portfolio_full', 'id DESC', 5) as $menu): ?>
-          <a href='<?= $menu['link']?>' class='dropdown-item'><?= $menu['name']?></a>
-        <? endforeach; ?>
-      </div>
-    </div>
-    / <?= $one_work['name']; ?>
-  </div>
-
   <div class="row one_work">
     <div class="col-lg-8 col-md-7 one_work_img">
       <img class="img-fluid" src="/img/works/<?= $one_work['img_site']; ?>" alt="<?= $one_work['name']; ?>">
-<!--      <img class="img-fluid" src="/img/works/--><?//= $one_work['img_site']; ?><!--" alt="--><?//= $one_work['name']; ?><!--">-->
     </div>
 
     <!--Видимый до 768px-->
@@ -106,6 +91,3 @@
       <?= $one_work['technology']; ?>
     </ol>
   </div>
-
-
-</div>
