@@ -38,7 +38,7 @@
       
 
       <div class="row one_work_h">
-        <a class="col button button-order" href="<?= $menu[2]['href']; ?>#feedback">Заказать проект</a>
+        <a class="col button button-order" href="/contact#feedback">Заказать проект</a>
       </div>
     </div><!--<div class="one_work_desc">-->
 

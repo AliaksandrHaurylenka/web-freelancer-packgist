@@ -1,4 +1,5 @@
-<div class="col col-lg-8 mb-4">          
+<a name="feedback"></a>
+<div class="col col-lg-8 mb-4">
   <div class="card">
 
     <div class="card-header">Обратная связь</div>
