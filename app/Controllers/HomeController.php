@@ -45,7 +45,7 @@ class HomeController {
 
   function portfolio()
   {
-    $works = $this->database->limit('portfolio_full', 'id DESC', 9);
+    $works = $this->database->limit('portfolio_full', 'id DESC', 12);
     //    dd($works);
     echo $this->views->render('pages/portfolio', compact('works'));
   }
@@ -66,5 +66,13 @@ class HomeController {
   function analytics()
   {
     echo $this->views->render('pages/site-analytics');
+  }
+
+
+  function work($name)
+  {
+    $one_work = $this->database->getOne('portfolio_full', 'link', $name);
+//    dd($work);
+    echo $this->views->render('pages/one-work', compact('one_work'));
   }
 } 

@@ -54,7 +54,7 @@ class Database
   }
 
 
-  //Вывод одного
+  //Вывод одного элемента по указанному столбцу и определенному значению
   function getOne($table, $col, $val)
   {
     $select = $this->queryFactory->newSelect();
@@ -68,6 +68,23 @@ class Database
     $result = $sth->fetch(PDO::FETCH_ASSOC);
 
     return $result;
+  }
+
+
+//  Вывод одного элемента по указанному столбцу
+  public function find($table, $id)
+  {
+    $select = $this->queryFactory->newSelect();
+    $select->cols(['*'])
+        ->from($table)
+        ->where('id = :id')
+        ->bindValue('id', $id);
+
+    $sth = $this->pdo->prepare($select->getStatement());
+
+    $sth->execute($select->getBindValues());
+
+    return $sth->fetch(PDO::FETCH_ASSOC);
   }
 
 

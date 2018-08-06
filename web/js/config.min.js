@@ -72,10 +72,11 @@ $(function(){
    * При совпадении присваиваем класс active тегу a вкладок Портфолио, Услуги
    */
   var pageSerch = window.location.pathname;
-  var portfolio = pageSerch.substr(6, 8);
+  var portfolio = pageSerch.substr(1, 4);
   var services = pageSerch.substr(1, 4);
   // alert(services);
-  var work = 'one-work';
+  // alert(portfolio);
+  var work = 'work';
   var service = 'site';
   if (portfolio == work){
     $('i[id="portfolio"]').parent().addClass('active');

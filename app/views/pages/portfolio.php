@@ -13,13 +13,13 @@
   <div class="row works">
     <? foreach($works as $work): ?>
       <div class="col-lg-4 flex-column justify-content-center">
-        <a href="<?= $work['link']; ?>" class="shrink">
+        <a href="/work/<?= $work['link']; ?>" class="shrink">
           <img class="img-thumbnail"
                src="/img/works/<?= $work['img']; ?>"
                alt="<?= $work['name']; ?>">
         </a>
         <div class="work-main">
-          <h2><a href="<?= $work['link']; ?>"><?= $work['name']; ?></a></h2>
+          <h2><a href="/work/<?= $work['link']; ?>"><?= $work['name']; ?></a></h2>
         </div>
       </div><!-- /.col-lg-4 -->
     <? endforeach; ?>

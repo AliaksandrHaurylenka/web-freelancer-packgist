@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="shortcut icon" href="/img/favicon/favicon.ico" type="image/x-icon">
 <!--  <link href='https://fonts.google.com/specimen/Open+Sans?selection.family=Open+Sans' rel='stylesheet' type='text/css'>-->
-  <link rel="stylesheet" href="css/libs.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="/css/libs.css">
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
 
@@ -37,7 +37,7 @@
 </script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
-<script src="js/scripts.min.js"></script>
+<script src="/js/scripts.min.js"></script>
 
 <!-- Обратная связь -->
 <script src="/feedback/js/main.js"></script>
