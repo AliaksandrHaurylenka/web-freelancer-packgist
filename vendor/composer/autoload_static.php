@@ -49,6 +49,10 @@ class ComposerStaticInit6dc935c2907fd052b676c66c9da1b083
             'Doctrine\\Common\\Inflector\\' => 26,
             'DI\\' => 3,
         ),
+        'C' => 
+        array (
+            'Composer\\Installers\\' => 20,
+        ),
         'A' => 
         array (
             'Aura\\SqlQuery\\' => 14,
@@ -120,6 +124,10 @@ class ComposerStaticInit6dc935c2907fd052b676c66c9da1b083
         'DI\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-di/php-di/src',
+        ),
+        'Composer\\Installers\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
         ),
         'Aura\\SqlQuery\\' => 
         array (
