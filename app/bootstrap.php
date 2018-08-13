@@ -44,8 +44,11 @@ $dispatcher=FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
 
 
     $r->get('/admin', ['App\Controllers\Admin\HomeController', 'index']);
+
     $r->get('/admin/project', ['App\Controllers\Admin\ProjectController', 'index']);
     $r->get('/admin/project/create', ['App\Controllers\Admin\ProjectController', 'create']);
+
+  $r->get('/admin/price', ['App\Controllers\Admin\PriceController', 'index']);
 
 });
 

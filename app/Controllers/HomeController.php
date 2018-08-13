@@ -12,6 +12,8 @@ namespace App\Controllers;
 use App\Models\Database;
 use League\Plates\Engine;
 
+
+//class HomeController extends MainController {
 class HomeController {
 
   private $views;

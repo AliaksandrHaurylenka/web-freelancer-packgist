@@ -25,7 +25,7 @@
         <div class="box-body">
           <div class="">
             <div class="box-header">
-              <h2 class="box-title">Добавить категорию</h2>
+              <h2 class="box-title">Добавить проект</h2>
             </div>
             <!-- /.box-header -->
             <div class="box-body">

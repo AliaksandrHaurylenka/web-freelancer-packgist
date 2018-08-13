@@ -1,3 +1,6 @@
-#example1 td {
-
+h3, h4 {
+  color: #008100;
+}
+#example1 th {
+  font-size: 1.7rem;
 }

@@ -40,7 +40,7 @@
             <li class="header">Навигация</li>
             <!-- Optionally, you can add icons to the links -->
             <li><a href="/admin/project"><i class="fa fa-image"></i> <span>Проекты</span></a></li>
-            <li><a href="/admin/prices"><i class="fa fa-list"></i> <span>Расценки</span></a></li>
+            <li><a href="/admin/price"><i class="fa fa-list"></i> <span>Расценки</span></a></li>
             <li><a href="/admin/users"><i class="fa fa-group"></i> <span>Пользователи</span></a></li>
             <li><a href="/logout"><i class="fa fa-sign-out"></i> <span>Выйти</span></a></li>
         </ul>
