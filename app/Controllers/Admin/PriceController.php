@@ -34,12 +34,6 @@ class PriceController
 
     public function store()
     {
-        /*$validator = v::key('title', v::stringType()->notEmpty());
-        $this->validate($validator, $_POST, [
-            'title'   =>  'Заполните поле Название'
-        ]);
-        $image = $this->imageManager->uploadImage($_FILES['image']);
-        $dimensions = $this->imageManager->getDimensions($image);*/
         $data = [
             "works" =>  $_POST['works'],
             "price" =>  $_POST['price'],
@@ -52,45 +46,31 @@ class PriceController
         return redirect('/admin/price');
     }
 
-//    public function edit($id)
-//    {
-//        $photo = $this->database->find('photos', $id);
-//        $categories = $this->database->all('categories');
-//        echo $this->view->render('admin/photos/edit', ['categories'    =>  $categories, 'photo'  =>  $photo]);
-//    }
+    public function edit($id)
+    {
+        $price = $this->database->find('price', $id);
+        echo $this->views->render('admin/price/edit', compact('price'));
+    }
 
-//    public function update($id)
-//    {
-//        $validator = v::key('title', v::stringType()->notEmpty());
-//        $this->validate($validator, $_POST, [
-//            'title'   =>  'Заполните поле Название'
-//        ]);
-//        $photo = $this->database->find('photos',$id);
-//
-//        $image = $this->imageManager->uploadImage($_FILES['image'], $photo['image']);
-//        $dimensions = $this->imageManager->getDimensions($image);
-//
-//        $data = [
-//            "image" =>  $image,
-//            "title" =>  $_POST['title'],
-//            "description" =>  $_POST['description'],
-//            "category_id" =>  $_POST['category_id'],
-//            "user_id"   =>  $this->auth->getUserId(),
-//            "dimensions"    =>  $dimensions
-//        ];
-//
-//        $this->database->update('photos', $id, $data);
-//
-//        return redirect('/admin/photos');
-//    }
+    public function update($id)
+    {
+        $data = [
+            "works" =>  $_POST['works'],
+            "price" =>  $_POST['price'],
+            "time" =>  $_POST['time'],
+            "service" =>  $_POST['service'],
+        ];
 
-//    public function delete($id)
-//    {
-//        $photo = $this->database->find('photos', $id);
-//        $this->imageManager->deleteImage($photo['image']);
-//        $this->database->delete('photos', $id);
-//        return back();
-//    }
+        $this->database->update('price', $id, $data);
+
+        return redirect('/admin/price');
+    }
+
+    public function delete($id)
+    {
+        $this->database->delete('price', $id);
+        return back();
+    }
 
 //    private function validate($validator, $data, $message)
 //    {

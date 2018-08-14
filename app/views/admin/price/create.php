@@ -34,17 +34,17 @@
                 <form action="/admin/price/store" method="post">
                   <div class="form-group">
                     <label for="works">Название работы</label>
-                    <input type="text" class="form-control" id="works" name="works">
+                    <input type="text" class="form-control" id="works" name="works" required>
                   </div>
 
                   <div class="form-group">
                     <label for="price">Стоимость</label>
-                    <input type="text" class="form-control" id="price" name="price">
+                    <input type="number" class="form-control" id="price" name="price" required>
                   </div>
 
                   <div class="form-group">
                     <label for="time">Время на выполнение, дней</label>
-                    <input type="text" class="form-control" id="time" name="time">
+                    <input type="number" class="form-control" id="time" name="time" required>
                   </div>
 
 

@@ -52,10 +52,10 @@
                       <a href="#" class="btn btn-info">
                         <i class="fa fa-eye"></i>
                       </a>
-                      <a href="/admin/project/<?= $p['id'];?>/edit" class="btn btn-warning">
+                      <a href="/admin/price/<?= $p['id'];?>/edit" class="btn btn-warning">
                         <i class="fa fa-pencil"></i>
                       </a>
-                      <a href="/admin/project/<?= $p['id'];?>/delete" class="btn btn-danger" onclick="return confirm('Вы уверены?');">
+                      <a href="/admin/price/<?= $p['id'];?>/delete" class="btn btn-danger" onclick="return confirm('Вы уверены?');">
                         <i class="fa fa-remove"></i>
                       </a>
                     </td>
@@ -64,11 +64,11 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th>#</th>
-                  <th>Название</th>
-                  <th>Скрин</th>
-                  <th>Действия</th>
-                  <th>Время</th>
+                    <th>#</th>
+                    <th>Проект</th>
+                    <th>Расценки</th>
+                    <th>Время</th>
+                    <th>Действия</th>
                 </tr>
                 </tfoot>
               </table>

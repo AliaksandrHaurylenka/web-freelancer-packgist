@@ -51,6 +51,9 @@ $dispatcher=FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
   $r->get('/admin/price', ['App\Controllers\Admin\PriceController', 'index']);
   $r->get('/admin/price/create', ['App\Controllers\Admin\PriceController', 'create']);
   $r->post('/admin/price/store', ['App\Controllers\Admin\PriceController', 'store']);
+  $r->get('/admin/price/{id:\d+}/delete', ['App\Controllers\Admin\PriceController', 'delete']);
+  $r->get('/admin/price/{id:\d+}/edit', ['App\Controllers\Admin\PriceController', 'edit']);
+  $r->post('/admin/price/{id:\d+}/update', ['App\Controllers\Admin\PriceController', 'update']);
 
 });
 
