@@ -103,4 +103,18 @@ class Database
 
     return $result;
   }
+
+//  добавление в базу данных
+  public function create($table, $data)
+  {
+    $insert = $this->queryFactory->newInsert();
+    $insert
+        ->into($table)
+        ->cols($data);
+
+    $sth = $this->pdo->prepare($insert->getStatement());
+
+    $sth->execute($insert->getBindValues());
+
+  }
 }

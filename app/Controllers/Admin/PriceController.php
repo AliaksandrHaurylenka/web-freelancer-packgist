@@ -27,33 +27,30 @@ class PriceController
         echo $this->views->render('admin/price/index', ['price' =>  $price]);
     }
 
-   /* public function create()
+    public function create()
     {
-        echo $this->views->render('admin/project/create');
-    }*/
+        echo $this->views->render('admin/price/create');
+    }
 
-//    public function store()
-//    {
-//        $validator = v::key('title', v::stringType()->notEmpty());
-//        $this->validate($validator, $_POST, [
-//            'title'   =>  'Заполните поле Название'
-//        ]);
-//        $image = $this->imageManager->uploadImage($_FILES['image']);
-//        $dimensions = $this->imageManager->getDimensions($image);
-//        $data = [
-//            "image" =>  $image,
-//            "title" =>  $_POST['title'],
-//            "description" =>  $_POST['description'],
-//            "category_id" =>  $_POST['category_id'],
-//            "user_id"   =>  $this->auth->getUserId(),
-//            "dimensions" =>  $dimensions,
-//            "date"  =>  time(),
-//        ];
-//
-//        $this->database->create('photos', $data);
-//
-//        return redirect('/admin/photos');
-//    }
+    public function store()
+    {
+        /*$validator = v::key('title', v::stringType()->notEmpty());
+        $this->validate($validator, $_POST, [
+            'title'   =>  'Заполните поле Название'
+        ]);
+        $image = $this->imageManager->uploadImage($_FILES['image']);
+        $dimensions = $this->imageManager->getDimensions($image);*/
+        $data = [
+            "works" =>  $_POST['works'],
+            "price" =>  $_POST['price'],
+            "time" =>  $_POST['time'],
+            "service" =>  $_POST['service'],
+        ];
+//        dd($data);
+        $this->database->create('price', $data);
+
+        return redirect('/admin/price');
+    }
 
 //    public function edit($id)
 //    {

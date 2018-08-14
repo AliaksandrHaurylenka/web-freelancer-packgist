@@ -37,6 +37,7 @@
                   <th>#</th>
                   <th>Проект</th>
                   <th>Расценки</th>
+                  <th>Время</th>
                   <th>Действия</th>
                 </tr>
                 </thead>
@@ -46,6 +47,7 @@
                     <td><?= $p['id'];?></td>
                     <td><h4><?= $p['works'];?></h4></td>
                     <td><h4><?= $p['price'];?></h4></td>
+                    <td><h4><?= $p['time'];?> дней</h4></td>
                     <td>
                       <a href="#" class="btn btn-info">
                         <i class="fa fa-eye"></i>
@@ -66,6 +68,7 @@
                   <th>Название</th>
                   <th>Скрин</th>
                   <th>Действия</th>
+                  <th>Время</th>
                 </tr>
                 </tfoot>
               </table>

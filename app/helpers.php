@@ -36,3 +36,9 @@ function config($field)
   $config = require '../app/config.php';
   return array_get($config, $field);
 }
+
+function redirect($path)
+{
+  header("Location: $path");
+  exit;
+}
