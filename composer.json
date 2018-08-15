@@ -5,7 +5,7 @@
         "php-di/php-di": "^6.0",
         "league/plates": "3.*",
         "aura/sqlquery": "^2.7",
-        "almasaeed2010/adminlte": "~2.4"
+        "delight-im/auth": "^8.0"
     },
 
     "autoload": {

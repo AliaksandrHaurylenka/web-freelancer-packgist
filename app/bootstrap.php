@@ -2,16 +2,17 @@
 
 use Aura\SqlQuery\QueryFactory;
 use DI\ContainerBuilder;
+use Delight\Auth\Auth;
 
-$containerBuilder=new ContainerBuilder();
-$containerBuilder->addDefinitions(
+$containerBuilder = new ContainerBuilder();
+$containerBuilder -> addDefinitions(
 [
-  QueryFactory::class=>function () {
+  QueryFactory::class => function () {
     $driver = config('database.driver');
     return new QueryFactory($driver);
   },
 
-  PDO::class=>function () {
+  PDO::class => function () {
     $driver = config('database.driver');
     $host = config('database.host');
     $database_name = config('database.database_name');
@@ -22,10 +23,14 @@ $containerBuilder->addDefinitions(
     return new PDO("$driver:host=$host; dbname=$database_name; charset=$charset", $username, $password);
   },
 
-  \League\Plates\Engine::class=>function () {
+  \League\Plates\Engine::class => function () {
     $path = config('views_path');
     return new \League\Plates\Engine($path);
-  }
+  },
+
+  Auth::class   =>  function($container) {
+    return new Auth($container -> get('PDO'));
+  },
 
 ]);
 
@@ -41,6 +46,10 @@ $dispatcher=FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
   $r->get('/site-creation', ['App\Controllers\HomeController', 'creation']);
   $r->get('/site-design', ['App\Controllers\HomeController', 'design']);
   $r->get('/work/{name}', ['App\Controllers\HomeController', 'work']);
+
+  $r->get('/login', ['App\Controllers\LoginController', 'showForm']);
+  $r->post('/login', ['App\Controllers\LoginController', 'login']);
+  $r->get('/logout', ['App\Controllers\LoginController', 'logout']);
 
 
     $r->get('/admin', ['App\Controllers\Admin\HomeController', 'index']);
