@@ -9,22 +9,7 @@
 namespace App\Controllers;
 
 
-use App\Models\Database;
-use League\Plates\Engine;
-
-
-//class HomeController extends MainController {
-class HomeController {
-
-  private $views;
-  private $database;
-
-  function __construct(Engine $views, Database $database)
-  {
-    $this->views = $views;
-    $this->database = $database;
-  }
-
+class HomeController extends MainController {
 
   function main()
   {

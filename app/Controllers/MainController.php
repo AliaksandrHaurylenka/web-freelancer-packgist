@@ -8,19 +8,21 @@
 
 namespace App\Controllers;
 
+use Delight\Auth\Auth;
 use App\Models\Database;
 use League\Plates\Engine;
+use PDO;
 
 class MainController
 {
-  private $views;
-  private $database;
+  protected $views;
+  protected $database;
+  protected $auth;
 
-  function __construct(Engine $views, Database $database)
+  function __construct()
   {
-    /*$this->views = $views;
-    $this->database = $database;*/
     $this->views = components(Engine::class);
     $this->database = components(Database::class);
+    $this->auth = components(Auth::class);
   }
 }

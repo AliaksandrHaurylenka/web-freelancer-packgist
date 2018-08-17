@@ -140,4 +140,25 @@ class Database
         $sth = $this->pdo->prepare($update->getStatement());
         $sth->execute($update->getBindValues());
     }
+
+
+  //Select User
+  function selectUser($table, $name, $password)
+  {
+    //  1. Проверить существует ли пользователь в базе
+
+    $select = $this->queryFactory->newSelect();
+    $select->cols(['*'])
+        ->from($table)
+        ->where('name=:name')
+        ->where('password=:password')
+        ->bindValue('name', $name)
+        ->bindValue('password', md5($password));
+
+    $sth = $this->pdo->prepare($select->getStatement());
+
+    $sth->execute($select->getBindValues());
+
+    return $sth->fetch(PDO::FETCH_ASSOC);
+  }
 }

@@ -67,10 +67,11 @@ gulp.task('scss', function () {
 gulp.task('watch', ['scss', 'js', 'browser-sync'], function () {
     gulp.watch('web/scss/**/*.scss', ['scss']);
     gulp.watch(['libs/**/*.js', 'web/js/config.js'], ['js']);
-    gulp.watch('app/views/blocks/**/*.php', browserSync.reload);
-    gulp.watch('app/views/pages/**/*.php', browserSync.reload);
-    gulp.watch('app/views/admin/**/*.php', browserSync.reload);
-    gulp.watch('app/views/*.php', browserSync.reload);
+    /*gulp.watch('app/views/blocks/!**!/!*.php', browserSync.reload);
+    gulp.watch('app/views/pages/!**!/!*.php', browserSync.reload);
+    gulp.watch('app/views/admin/!**!/!*.php', browserSync.reload);
+    gulp.watch('app/views/!*.php', browserSync.reload);*/
+    gulp.watch('app/**/*.php', browserSync.reload);
 });
 
 gulp.task('imagemin', function () {

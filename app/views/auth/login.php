@@ -9,6 +9,7 @@
 
       <div class="row justify-content-center mt-5">
         <form action="/login" method="post" class="col-6">
+<!--        <form action="/login" method="post" class="col-6">-->
           <label for="login">User</label>
           <div class="input-group mb-3">
             <div class="input-group-addon"><i class="fa fa-user"></i></i></div>

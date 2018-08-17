@@ -5,20 +5,10 @@ namespace App\Controllers\Admin;
 use Respect\Validation\Exceptions\ValidationException;
 use Respect\Validation\Validator as v;*/
 
-use App\Models\Database;
-use League\Plates\Engine;
+use App\Controllers\MainController;
 
-class PriceController
+class PriceController extends MainController
 {
-
-  private $views;
-  private $database;
-
-  function __construct(Engine $views, Database $database)
-  {
-    $this->views = $views;
-    $this->database = $database;
-  }
 
     public function index()
     {
@@ -31,6 +21,7 @@ class PriceController
     {
         echo $this->views->render('admin/price/create');
     }
+
 
     public function store()
     {
@@ -46,11 +37,13 @@ class PriceController
         return redirect('/admin/price');
     }
 
+
     public function edit($id)
     {
         $price = $this->database->find('price', $id);
         echo $this->views->render('admin/price/edit', compact('price'));
     }
+
 
     public function update($id)
     {
@@ -65,6 +58,7 @@ class PriceController
 
         return redirect('/admin/price');
     }
+
 
     public function delete($id)
     {

@@ -5,10 +5,9 @@ namespace App\Controllers\Admin;
 use Respect\Validation\Exceptions\ValidationException;
 use Respect\Validation\Validator as v;*/
 
-use App\Models\Database;
-use League\Plates\Engine;
+use App\Controllers\MainController;
 
-class ProjectController
+class ProjectController extends MainController
 {
     /*private $imageManager;
 
@@ -18,14 +17,6 @@ class ProjectController
         $this->imageManager = $imageManager;
     }*/
 
-  private $views;
-  private $database;
-
-  function __construct(Engine $views, Database $database)
-  {
-    $this->views = $views;
-    $this->database = $database;
-  }
 
     public function index()
     {

@@ -47,22 +47,26 @@ $dispatcher=FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
   $r->get('/site-design', ['App\Controllers\HomeController', 'design']);
   $r->get('/work/{name}', ['App\Controllers\HomeController', 'work']);
 
+  $r->get('/register', ['App\Controllers\RegisterController', 'showForm']);
+  $r->post('/register', ['App\Controllers\RegisterController', 'register']);
+
+
   $r->get('/login', ['App\Controllers\LoginController', 'showForm']);
   $r->post('/login', ['App\Controllers\LoginController', 'login']);
   $r->get('/logout', ['App\Controllers\LoginController', 'logout']);
 
 
-    $r->get('/admin', ['App\Controllers\Admin\HomeController', 'index']);
+  $r->addGroup('/admin', function (FastRoute\RouteCollector $r) {
+    $r->get('/project', ['App\Controllers\Admin\ProjectController', 'index']);
+    $r->get('/project/create', ['App\Controllers\Admin\ProjectController', 'create']);
 
-    $r->get('/admin/project', ['App\Controllers\Admin\ProjectController', 'index']);
-    $r->get('/admin/project/create', ['App\Controllers\Admin\ProjectController', 'create']);
-
-  $r->get('/admin/price', ['App\Controllers\Admin\PriceController', 'index']);
-  $r->get('/admin/price/create', ['App\Controllers\Admin\PriceController', 'create']);
-  $r->post('/admin/price/store', ['App\Controllers\Admin\PriceController', 'store']);
-  $r->get('/admin/price/{id:\d+}/delete', ['App\Controllers\Admin\PriceController', 'delete']);
-  $r->get('/admin/price/{id:\d+}/edit', ['App\Controllers\Admin\PriceController', 'edit']);
-  $r->post('/admin/price/{id:\d+}/update', ['App\Controllers\Admin\PriceController', 'update']);
+    $r->get('/price', ['App\Controllers\Admin\PriceController', 'index']);
+    $r->get('/price/create', ['App\Controllers\Admin\PriceController', 'create']);
+    $r->post('/price/store', ['App\Controllers\Admin\PriceController', 'store']);
+    $r->get('/price/{id:\d+}/delete', ['App\Controllers\Admin\PriceController', 'delete']);
+    $r->get('/price/{id:\d+}/edit', ['App\Controllers\Admin\PriceController', 'edit']);
+    $r->post('/price/{id:\d+}/update', ['App\Controllers\Admin\PriceController', 'update']);
+  });
 
 });
 

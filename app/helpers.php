@@ -48,3 +48,9 @@ function back()
     header("Location: " . $_SERVER['HTTP_REFERER']);
     exit;
 }
+
+function components($name)
+{
+  global $container;
+  return $container->get($name);
+}
