@@ -66,16 +66,4 @@ class PriceController extends MainController
         return back();
     }
 
-//    private function validate($validator, $data, $message)
-//    {
-//        try {
-//            $validator->assert($data);
-//
-//        } catch (ValidationException $exception) {
-//            $exception->findMessages($message);
-//            flash()->error($exception->getMessages());
-//
-//            return back();
-//        }
-//    }
 }

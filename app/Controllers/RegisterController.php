@@ -23,5 +23,7 @@ class RegisterController extends MainController
         'name' => $_POST['admin'],
         'password' => md5($_POST['pass']),
     ]);
+
+    return redirect('/login');
   }
 }

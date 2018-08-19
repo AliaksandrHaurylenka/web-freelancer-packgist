@@ -11,7 +11,6 @@ namespace App\Controllers;
 use Delight\Auth\Auth;
 use App\Models\Database;
 use League\Plates\Engine;
-use PDO;
 
 class MainController
 {

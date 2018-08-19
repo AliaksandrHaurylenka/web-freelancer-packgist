@@ -2,7 +2,7 @@
 <header class="main-header">
 
     <!-- Logo -->
-    <a href="/admin" class="logo">
+    <a href="/aliaksandr|haurylenka" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>A</b>LT</span>
         <!-- logo for regular state and mobile devices -->
@@ -39,9 +39,8 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">Навигация</li>
             <!-- Optionally, you can add icons to the links -->
-            <li><a href="/admin/project"><i class="fa fa-image"></i> <span>Проекты</span></a></li>
-            <li><a href="/admin/price"><i class="fa fa-list"></i> <span>Расценки</span></a></li>
-            <li><a href="/admin/users"><i class="fa fa-group"></i> <span>Пользователи</span></a></li>
+            <li><a href="/AliaksandrHaurylenka/project"><i class="fa fa-image"></i> <span>Проекты</span></a></li>
+            <li><a href="/AliaksandrHaurylenka/price"><i class="fa fa-list"></i> <span>Расценки</span></a></li>
             <li><a href="/logout"><i class="fa fa-sign-out"></i> <span>Выйти</span></a></li>
         </ul>
         <!-- /.sidebar-menu -->

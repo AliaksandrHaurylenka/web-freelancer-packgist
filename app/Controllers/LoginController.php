@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers;
 
 
@@ -7,20 +8,20 @@ class LoginController extends MainController
 
     public function showForm()
     {
-      echo $this->views->render('auth/login');
+        echo $this->views->render('auth/login');
     }
 
-  //Проверка на наличие пользователя в базе
-  function login()
-  {
-    $user = $this->database->selectUser('users', $_POST['admin'], $_POST['pass']);
+    //Проверка на наличие пользователя в базе
+    function login()
+    {
+        $user = $this->database->selectUser('users', $_POST['admin'], $_POST['pass']);
 
-    if($user) {
-      echo $this->views->render('admin/dashboard');
+        if ($user) {
+            $_SESSION['admin'] = $user;
+            echo $this->views->render('admin/dashboard');
+        }
+        return redirect('/login');
     }
-    //    return false;
-    echo 'No';
-  }
 
 //    public function login()
 //    {
