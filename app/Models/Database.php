@@ -53,6 +53,21 @@ class Database
     return $result;
   }
 
+    // Вывод всего в обратном порядке
+    function allDesc($table, $col)
+    {
+        $select = $this->queryFactory->newSelect();
+        $select->cols(['*'])
+            ->from($table)
+            ->orderBy([$col]);
+
+        $sth = $this->pdo->prepare($select->getStatement());
+        $sth->execute($select->getBindValues());
+        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
 
   //Вывод одного элемента по указанному столбцу и определенному значению
   function getOne($table, $col, $val)
@@ -81,9 +96,7 @@ class Database
         ->bindValue('id', $id);
 
     $sth = $this->pdo->prepare($select->getStatement());
-
     $sth->execute($select->getBindValues());
-
     return $sth->fetch(PDO::FETCH_ASSOC);
   }
 

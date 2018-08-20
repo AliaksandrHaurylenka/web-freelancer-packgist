@@ -31,7 +31,7 @@
             <!-- /.box-header -->
             <div class="box-body">
               <div class="col-md-6">
-                <!--                                --><?php //echo flash(); ?>
+                <?php //echo flash(); ?>
                 <form action="/AliaksandrHaurylenka/price/<?= $price['id']; ?>/update" method="post">
                   <div class="form-group">
                     <label for="works">Название проекта</label>

@@ -49,13 +49,13 @@
                     <td><img src="/img/works/<?= $p['img'];?>" height="200px"></td>
                     <td><img src="/img/works/<?= $p['img_site'];?>" height="200px"></td>
                     <td>
-                      <a href="#" class="btn btn-info">
+                      <a href="#" class="btn btn-info" style="margin-bottom: .5rem">
                         <i class="fa fa-eye"></i>
                       </a>
-                      <a href="/AliaksandrHaurylenka/project/<?= $p['id'];?>/edit" class="btn btn-warning">
+                      <a href="/AliaksandrHaurylenka/project/<?= $p['id'];?>/edit" class="btn btn-warning" style="margin-bottom: .5rem">
                         <i class="fa fa-pencil"></i>
                       </a>
-                      <a href="/AliaksandrHaurylenka/project/<?= $p['id'];?>/delete" class="btn btn-danger" onclick="return confirm('Вы уверены?');">
+                      <a href="/AliaksandrHaurylenka/project/<?= $p['id'];?>/delete" style="margin-bottom: .5rem" class="btn btn-danger" onclick="return confirm('Вы уверены?');">
                         <i class="fa fa-remove"></i>
                       </a>
                     </td>

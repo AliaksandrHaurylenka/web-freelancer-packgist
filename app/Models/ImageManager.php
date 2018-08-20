@@ -21,7 +21,7 @@ class ImageManager
     return $filename;
   }
 
- /* public function checkImageExists($path)
+  public function checkImageExists($path)
   {
     if($path!=null && is_file($this->folder.$path) && file_exists($this->folder.$path)){
       return true;
@@ -51,5 +51,5 @@ class ImageManager
     }
 
     return '/img/no-user.png';
-  }*/
+  }
 }

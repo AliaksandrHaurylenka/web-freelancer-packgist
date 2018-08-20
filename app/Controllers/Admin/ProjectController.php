@@ -58,12 +58,11 @@ class ProjectController extends MainController
     return redirect('/AliaksandrHaurylenka/project');
   }
 
-  //    public function edit($id)
-  //    {
-  //        $photo = $this->database->find('photos', $id);
-  //        $categories = $this->database->all('categories');
-  //        echo $this->view->render('admin/photos/edit', ['categories'    =>  $categories, 'photo'  =>  $photo]);
-  //    }
+      public function edit($id)
+      {
+          $project = $this->database->find('portfolio_full', $id);
+          echo $this->views->render('admin/project/edit', ['project'  =>  $project]);
+      }
 
   //    public function update($id)
   //    {
@@ -90,13 +89,14 @@ class ProjectController extends MainController
   //        return redirect('/admin/photos');
   //    }
 
-  //    public function delete($id)
-  //    {
-  //        $photo = $this->database->find('photos', $id);
-  //        $this->imageManager->deleteImage($photo['image']);
-  //        $this->database->delete('photos', $id);
-  //        return back();
-  //    }
+      public function delete($id)
+      {
+          $project = $this->database->find('portfolio_full', $id);
+          $this->imageManager->deleteImage($project['img']);
+          $this->imageManager->deleteImage($project['img_site']);
+          $this->database->delete('portfolio_full', $id);
+          return back();
+      }
 
   //    private function validate($validator, $data, $message)
   //    {
