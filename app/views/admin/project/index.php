@@ -30,13 +30,14 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <a href="/admin/project/create" class="btn btn-success btn-lg">Добавить</a> <br> <br>
+              <a href="/AliaksandrHaurylenka/project/create" class="btn btn-success btn-lg">Добавить</a> <br> <br>
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                   <th>#</th>
-                  <th>Название</th>
-                  <th>Скрин</th>
+                  <th>Название проекта</th>
+                  <th>Скрин в портфолио</th>
+                  <th>Скрин сайта</th>
                   <th>Действия</th>
                 </tr>
                 </thead>
@@ -45,16 +46,16 @@
                   <tr>
                     <td><?= $p['id'];?></td>
                     <td><h3><?= $p['name'];?></h3></td>
-<!--                    <td><img src="/img/works/--><?//= $p['img'];?><!--" width="20%"></td>-->
                     <td><img src="/img/works/<?= $p['img'];?>" height="200px"></td>
+                    <td><img src="/img/works/<?= $p['img_site'];?>" height="200px"></td>
                     <td>
                       <a href="#" class="btn btn-info">
                         <i class="fa fa-eye"></i>
                       </a>
-                      <a href="/admin/project/<?= $p['id'];?>/edit" class="btn btn-warning">
+                      <a href="/AliaksandrHaurylenka/project/<?= $p['id'];?>/edit" class="btn btn-warning">
                         <i class="fa fa-pencil"></i>
                       </a>
-                      <a href="/admin/project/<?= $p['id'];?>/delete" class="btn btn-danger" onclick="return confirm('Вы уверены?');">
+                      <a href="/AliaksandrHaurylenka/project/<?= $p['id'];?>/delete" class="btn btn-danger" onclick="return confirm('Вы уверены?');">
                         <i class="fa fa-remove"></i>
                       </a>
                     </td>
@@ -64,8 +65,9 @@
                 <tfoot>
                 <tr>
                   <th>#</th>
-                  <th>Название</th>
-                  <th>Скрин</th>
+                  <th>Название проекта</th>
+                  <th>Скрин в портфолио</th>
+                  <th>Скрин сайта</th>
                   <th>Действия</th>
                 </tr>
                 </tfoot>

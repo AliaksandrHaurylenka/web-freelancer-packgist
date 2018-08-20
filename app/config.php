@@ -31,7 +31,7 @@ return [
     "username"  =>  "a0196439_strahovka",
     "password"  =>  "X1UAs5Fk",*/
   ],
-  'uploadsFolder' =>  'uploads/',
+  'uploadsFolder' =>  'img/works/',
   'phone' => [
     'phone1' => '+375(29)348-76-88',
     'phone2' => '+375(29)377-51-08'

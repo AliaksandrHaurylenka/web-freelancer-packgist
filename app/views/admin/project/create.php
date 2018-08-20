@@ -31,21 +31,46 @@
             <div class="box-body">
               <div class="col-md-6">
                 <?//= flash(); ?>
-                <form action="/admin/project/store" method="post" enctype="multipart/form-data">
+                <form action="/AliaksandrHaurylenka/project/store" method="post" enctype="multipart/form-data">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Название</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" name="title">
+                    <label for="project">Название проекта</label>
+                    <input type="text" class="form-control" id="project" name="title">
                   </div>
 
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Краткое описание</label>
-                    <textarea name="description" class="form-control"></textarea>
+                    <label for="type_project">Тип проекта</label>
+                    <input type="text" class="form-control" id="type_project" name="type_project">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="description">Краткое описание</label>
+                    <textarea name="description" class="form-control" id="description"></textarea>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="technology">Используемые технологии</label>
+                    <textarea name="technology" class="form-control" id="technology"></textarea>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="link">Ссылка для выпадающего меню</label>
+                    <input type="text" class="form-control" id="link" name="link">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="link_site">Ссылка на сайт</label>
+                    <input type="text" class="form-control" id="link_site" name="link_site">
                   </div>
 
 
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Изображение</label>
-                    <input type="file" id="exampleInputEmail1" name="image">
+                    <label for="images">Изображение</label>
+                    <input type="file" id="images" name="image">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="image_site">Изображение для портфолио</label>
+                    <input type="file" id="image_site" name="image_site">
                   </div>
 
                   <div class="form-group">

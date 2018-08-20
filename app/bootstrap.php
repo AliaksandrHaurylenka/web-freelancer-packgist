@@ -61,6 +61,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
 
         $r->get('/project', ['App\Controllers\Admin\ProjectController', 'index']);
         $r->get('/project/create', ['App\Controllers\Admin\ProjectController', 'create']);
+        $r->post('/project/store', ['App\Controllers\Admin\ProjectController', 'store']);
 
         $r->get('/price', ['App\Controllers\Admin\PriceController', 'index']);
         $r->get('/price/create', ['App\Controllers\Admin\PriceController', 'create']);
