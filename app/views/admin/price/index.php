@@ -35,9 +35,9 @@
                 <thead>
                 <tr>
                   <th>#</th>
-                  <th>Проект</th>
-                  <th>Расценки</th>
-                  <th>Время</th>
+                  <th>Виды работ</th>
+                  <th>Расценки, руб.</th>
+                  <th>Время выполнения</th>
                   <th>Действия</th>
                 </tr>
                 </thead>
@@ -65,9 +65,9 @@
                 <tfoot>
                 <tr>
                     <th>#</th>
-                    <th>Проект</th>
-                    <th>Расценки</th>
-                    <th>Время</th>
+                    <th>Виды работ</th>
+                    <th>Расценки, руб.</th>
+                    <th>Время выполнения</th>
                     <th>Действия</th>
                 </tr>
                 </tfoot>
@@ -77,9 +77,7 @@
           </div>
         </div>
         <!-- /.box-body -->
-        <div class="box-footer">
-          По вопросам к главному администратору.
-        </div>
+        <?= $this->insert('admin/partials/box-footer'); ?>
         <!-- /.box-footer-->
       </div>
       <!-- /.box -->

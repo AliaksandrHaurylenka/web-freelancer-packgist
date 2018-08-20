@@ -1,9 +1,8 @@
 <?php
 namespace App\Controllers\Admin;
 
-/*use App\Services\ImageManager;
-use Respect\Validation\Exceptions\ValidationException;
-use Respect\Validation\Validator as v;*/
+//use Respect\Validation\Exceptions\ValidationException;
+//use Respect\Validation\Validator as v;
 
 use App\Controllers\MainController;
 
@@ -34,7 +33,7 @@ class PriceController extends MainController
 //        dd($data);
         $this->database->create('price', $data);
 
-        return redirect('/admin/price');
+        return redirect('/AliaksandrHaurylenka/price');
     }
 
 

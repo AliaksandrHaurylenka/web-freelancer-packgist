@@ -75,9 +75,7 @@
           </div>
         </div>
         <!-- /.box-body -->
-        <div class="box-footer">
-          По вопросам к главному администратору.
-        </div>
+        <?= $this->insert('admin/partials/box-footer'); ?>
         <!-- /.box-footer-->
       </div>
       <!-- /.box -->
