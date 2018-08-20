@@ -31,7 +31,7 @@
             <div class="box-body">
               <div class="col-md-6">
                 <?//= flash(); ?>
-                <form action="/admin/price/store" method="post">
+                <form action="/AliaksandrHaurylenka/price/store" method="post">
                   <div class="form-group">
                     <label for="works">Название работы</label>
                     <input type="text" class="form-control" id="works" name="works" required>

@@ -30,7 +30,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <a href="/admin/price/create" class="btn btn-success btn-lg">Добавить</a> <br> <br>
+              <a href="/AliaksandrHaurylenka/price/create" class="btn btn-success btn-lg">Добавить</a> <br> <br>
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
@@ -52,10 +52,10 @@
                       <a href="#" class="btn btn-info">
                         <i class="fa fa-eye"></i>
                       </a>
-                      <a href="/admin/price/<?= $p['id'];?>/edit" class="btn btn-warning">
+                      <a href="/AliaksandrHaurylenka/price/<?= $p['id'];?>/edit" class="btn btn-warning">
                         <i class="fa fa-pencil"></i>
                       </a>
-                      <a href="/admin/price/<?= $p['id'];?>/delete" class="btn btn-danger" onclick="return confirm('Вы уверены?');">
+                      <a href="/AliaksandrHaurylenka/price/<?= $p['id'];?>/delete" class="btn btn-danger" onclick="return confirm('Вы уверены?');">
                         <i class="fa fa-remove"></i>
                       </a>
                     </td>

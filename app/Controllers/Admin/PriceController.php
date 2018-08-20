@@ -41,7 +41,7 @@ class PriceController extends MainController
     public function edit($id)
     {
         $price = $this->database->find('price', $id);
-        echo $this->views->render('admin/price/edit', compact('price'));
+        echo $this->views->render('/admin/price/edit', compact('price'));
     }
 
 
@@ -56,7 +56,7 @@ class PriceController extends MainController
 
         $this->database->update('price', $id, $data);
 
-        return redirect('/admin/price');
+        return redirect('/AliaksandrHaurylenka/price');
     }
 
 

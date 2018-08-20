@@ -32,7 +32,7 @@
                         <div class="box-body">
                             <div class="col-md-6">
 <!--                                --><?php //echo flash(); ?>
-                                <form action="/admin/price/<?= $price['id'];?>/update" method="post">
+                                <form action="/AliaksandrHaurylenka/price/<?= $price['id'];?>/update" method="post">
                                     <div class="form-group">
                                         <label for="works">Название проекта</label>
                                         <input type="text" class="form-control" name="works" id="works" value="<?= $price['works'];?>" required>
