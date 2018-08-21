@@ -13,8 +13,11 @@ class ImageManager
     $this->folder=config('uploadsFolder');
   }
 
-  public function uploadImage($image)
+  public function uploadImage($image, $currentImage = null)
   {
+    if(!is_file($image['tmp_name']) && !is_uploaded_file($image['tmp_name'])) { return $currentImage; }
+    $this->deleteImage($currentImage);
+
     $filename=strtolower(str_random(10)).'.'.pathinfo(strtolower($image['name']), PATHINFO_EXTENSION);
     $image=Image::make($image['tmp_name']);
     $image->save($this->folder.$filename);
@@ -35,15 +38,15 @@ class ImageManager
     }
   }
 
-  public function getDimensions($file)
+  /*public function getDimensions($file)
   {
     if($this->checkImageExists($file)){
       list($width, $height)=getimagesize($this->folder.$file);
       return $width."x".$height;
     }
-  }
+  }*/
 
-  function getImage($image)
+  /*function getImage($image)
   {
 
     if($this->checkImageExists($image)){
@@ -51,5 +54,5 @@ class ImageManager
     }
 
     return '/img/no-user.png';
-  }
+  }*/
 }
