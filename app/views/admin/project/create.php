@@ -70,12 +70,12 @@
 
 
                   <div class="form-group">
-                    <label for="images">Изображение</label>
+                    <label for="images">Изображение для портфолио</label>
                     <input type="file" id="images" name="image">
                   </div>
 
                   <div class="form-group">
-                    <label for="image_site">Изображение для портфолио</label>
+                    <label for="image_site">Изображение сайта</label>
                     <input type="file" id="image_site" name="image_site">
                   </div>
 
