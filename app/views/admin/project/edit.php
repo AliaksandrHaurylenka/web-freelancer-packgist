@@ -76,7 +76,7 @@
                   <div class="row" style="margin-bottom: 1rem">
                     <img src="/img/works/<?= $project['img']; ?>" alt="<?= $project['name']; ?>" class="col-md-6">
                     <div class="form-group col-md-6">
-                      <label for="images">Изображение сайта</label>
+                      <label for="images">Изображение для портфолио</label>
                       <input type="file" id="images" name="image">
                     </div>
                   </div>
@@ -84,7 +84,7 @@
                   <div class="row" style="margin-bottom: 1rem">
                     <img src="/img/works/<?= $project['img_site']; ?>" alt="<?= $project['name']; ?>" class="col-md-6">
                     <div class="form-group col-md-6">
-                      <label for="image_site">Изображение для портфолио</label>
+                      <label for="image_site">Изображение сайта</label>
                       <input type="file" id="image_site" name="image_site">
                     </div>
                   </div>
