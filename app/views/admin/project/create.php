@@ -43,13 +43,19 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="description">Краткое описание</label>
-                    <textarea name="description" class="form-control" id="description"></textarea>
+                    <label for="editor">Краткое описание</label>
+                    <textarea name="description" class="form-control" id="editor"></textarea>
+                    <script>
+                      CKEDITOR.replace('editor', {height: 200});
+                    </script>
                   </div>
 
                   <div class="form-group">
                     <label for="technology">Используемые технологии</label>
                     <textarea name="technology" class="form-control" id="technology"></textarea>
+                    <script>
+                      CKEDITOR.replace('technology', {height: 200});
+                    </script>
                   </div>
 
                   <div class="form-group">

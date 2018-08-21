@@ -87,7 +87,5 @@
   <div class="mt-4 quote">
     <?= $one_work['description']; ?>
     <p class="bold">Используемые технологии:</p>
-    <ol>
-      <?= $one_work['technology']; ?>
-    </ol>
+    <?= $one_work['technology']; ?>
   </div>

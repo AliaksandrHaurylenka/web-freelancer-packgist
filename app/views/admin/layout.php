@@ -38,6 +38,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="/adminLTE/css/skin-purple.min.css">
   <link rel="stylesheet" href="/adminLTE/css/mystyle.css">
 
+<!--  <script src="/adminLTE/ckeditor5-build-classic/ckeditor.js"></script>-->
+<!--  <script src="/adminLTE/ckeditor_full/ckeditor.js"></script>-->
+  <script src="/adminLTE/ckeditor_standard/ckeditor.js"></script>
+<!--  <script src="/adminLTE/ckeditor_basic/ckeditor.js"></script>-->
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -71,6 +76,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="/adminLTE/js/dataTables.bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/adminLTE/js/adminlte.min.js"></script>
+
+<script src="/adminLTE/ckeditor5-build-classic/ckeditor.js"></script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the

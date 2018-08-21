@@ -35,8 +35,8 @@ class ProjectController extends MainController
   {
     /*$validator=v::key('title', v::stringType()->notEmpty());
     $this->validate($validator, $_POST, ['title'=>'Заполните поле Название']);*/
-    $image=$this->imageManager->uploadImage($_FILES['image']);
-    $image_site=$this->imageManager->uploadImage($_FILES['image_site']);
+    $image=$this->imageManager->uploadImage($_FILES['image'], 736, 330);
+    $image_site=$this->imageManager->uploadImage($_FILES['image_site'], 1141, 967);
 //    $dimensions=$this->imageManager->getDimensions($image);
     $data=
       [
@@ -72,8 +72,8 @@ class ProjectController extends MainController
           ]);*/
           $project = $this->database->find('portfolio_full', $id);
 
-          $image=$this->imageManager->uploadImage($_FILES['image'], $project['img']);
-          $image_site=$this->imageManager->uploadImage($_FILES['image_site'], $project['img_site']);
+          $image=$this->imageManager->uploadImage($_FILES['image'],736, 330, $project['img']);
+          $image_site=$this->imageManager->uploadImage($_FILES['image_site'],1141, 967, $project['img_site']);
 //          $dimensions = $this->imageManager->getDimensions($image);
 
         $data=

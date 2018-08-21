@@ -13,13 +13,16 @@ class ImageManager
     $this->folder=config('uploadsFolder');
   }
 
-  public function uploadImage($image, $currentImage = null)
+  public function uploadImage($image, $width, $height, $currentImage = null)
   {
     if(!is_file($image['tmp_name']) && !is_uploaded_file($image['tmp_name'])) { return $currentImage; }
     $this->deleteImage($currentImage);
 
     $filename=strtolower(str_random(10)).'.'.pathinfo(strtolower($image['name']), PATHINFO_EXTENSION);
-    $image=Image::make($image['tmp_name']);
+//    $image=Image::make($image['tmp_name'])->resize($width, $height);
+//    $image=Image::make($image['tmp_name'])->resizeCanvas($width, $height);
+//    $image=Image::make($image['tmp_name'])->encode('jpg', 30)->fit($width, $height);
+    $image=Image::make($image['tmp_name'])->fit($width, $height);
     $image->save($this->folder.$filename);
     return $filename;
   }
