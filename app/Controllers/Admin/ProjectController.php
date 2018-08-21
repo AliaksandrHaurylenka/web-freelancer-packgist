@@ -22,7 +22,6 @@ class ProjectController extends MainController
   public function index()
   {
     $projects=$this->database->all("portfolio_full");
-
     echo $this->views->render('admin/project/index', ['project'=>$projects]);
   }
 

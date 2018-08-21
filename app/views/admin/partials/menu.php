@@ -41,6 +41,7 @@
             <!-- Optionally, you can add icons to the links -->
             <li><a href="/AliaksandrHaurylenka/project"><i class="fa fa-image"></i> <span>Проекты</span></a></li>
             <li><a href="/AliaksandrHaurylenka/price"><i class="fa fa-list"></i> <span>Расценки</span></a></li>
+            <li><a href="/AliaksandrHaurylenka/services"><i class="fa fa-list"></i> <span>Услуги</span></a></li>
             <li><a href="/logout"><i class="fa fa-sign-out"></i> <span>Выйти</span></a></li>
         </ul>
         <!-- /.sidebar-menu -->

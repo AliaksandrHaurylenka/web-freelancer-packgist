@@ -30,9 +30,7 @@
 			</div><!--class="col-sm-5 no-gutters"-->
 
 			<!-- 2-й блок -->
-			<ul class="col-md-3 pt-5">
-      	<?= $service['what_we_do']; ?>   
-    	</ul>
+      	<?= $service['what_we_do']; ?>
 
     	<!-- 3-й блок -->
     	<div class="col-md-4 no-gutters pt-5 text-service">      

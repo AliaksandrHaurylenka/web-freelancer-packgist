@@ -72,6 +72,13 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->get('/price/{id:\d+}/delete', ['App\Controllers\Admin\PriceController', 'delete']);
         $r->get('/price/{id:\d+}/edit', ['App\Controllers\Admin\PriceController', 'edit']);
         $r->post('/price/{id:\d+}/update', ['App\Controllers\Admin\PriceController', 'update']);
+
+        $r->get('/services', ['App\Controllers\Admin\ServicesController', 'index']);
+        $r->get('/services/create', ['App\Controllers\Admin\ServicesController', 'create']);
+        $r->post('/services/store', ['App\Controllers\Admin\ServicesController', 'store']);
+        $r->get('/services/{id:\d+}/delete', ['App\Controllers\Admin\ServicesController', 'delete']);
+        $r->get('/services/{id:\d+}/edit', ['App\Controllers\Admin\ServicesController', 'edit']);
+        $r->post('/services/{id:\d+}/update', ['App\Controllers\Admin\ServicesController', 'update']);
     });
 
 });
