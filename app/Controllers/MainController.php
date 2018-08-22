@@ -8,8 +8,8 @@
 
 namespace App\Controllers;
 
-use Delight\Auth\Auth;
 use App\Models\Database;
+use Delight\Auth\Auth;
 use League\Plates\Engine;
 
 class MainController

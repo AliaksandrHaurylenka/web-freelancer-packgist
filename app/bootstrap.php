@@ -3,14 +3,13 @@
 use Aura\SqlQuery\QueryFactory;
 use DI\ContainerBuilder;
 use Delight\Auth\Auth;
+use FastRoute\RouteCollector;
+use League\Plates\Engine;
 
-$containerBuilder = new ContainerBuilder();
-$containerBuilder->addDefinitions(
+$containerBuilder = new ContainerBuilder;
+$containerBuilder -> addDefinitions(
     [
-        QueryFactory::class => function () {
-            $driver = config('database.driver');
-            return new QueryFactory($driver);
-        },
+
 
         PDO::class => function () {
             $driver = config('database.driver');
@@ -23,13 +22,18 @@ $containerBuilder->addDefinitions(
             return new PDO("$driver:host=$host; dbname=$database_name; charset=$charset", $username, $password);
         },
 
-        \League\Plates\Engine::class => function () {
+        Engine::class => function () {
             $path = config('views_path');
-            return new \League\Plates\Engine($path);
+            return new Engine($path);
         },
 
-        Auth::class => function ($container) {
-            return new Auth($container->get('PDO'));
+        Delight\Auth\Auth::class => function ($container) {
+            return new Auth($container -> get('PDO'));
+        },
+
+        QueryFactory::class => function () {
+          $driver = config('database.driver');
+          return new QueryFactory($driver);
         },
 
     ]);
@@ -37,7 +41,7 @@ $containerBuilder->addDefinitions(
 $container = $containerBuilder->build();
 
 
-$dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
+$dispatcher = FastRoute\simpleDispatcher(function (RouteCollector $r) {
     $r->get('/', ['App\Controllers\HomeController', 'main']);
     $r->get('/contact', ['App\Controllers\HomeController', 'contact']);
     $r->get('/service', ['App\Controllers\HomeController', 'service']);
@@ -56,7 +60,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     $r->get('/logout', ['App\Controllers\LoginController', 'logout']);
 
 
-    $r->addGroup('/AliaksandrHaurylenka', function (FastRoute\RouteCollector $r) {
+    $r->addGroup('/AliaksandrHaurylenka', function (RouteCollector $r) {
         $r->get('', ['App\Controllers\Admin\HomeController', 'index']);
 
         $r->get('/project', ['App\Controllers\Admin\ProjectController', 'index']);
@@ -101,8 +105,7 @@ switch ($routeInfo[0]) {
         break;
     case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
         $allowedMethods = $routeInfo[1];
-        var_dump("405 Method Not Allowed");
-        //dd($_SERVER);
+        dd('Метод запроса не верный');
         break;
     case FastRoute\Dispatcher::FOUND:
         $handler = $routeInfo[1];
@@ -112,6 +115,7 @@ switch ($routeInfo[0]) {
         //    dd($vars);
         //call_user_func($handler);
 
-        $container->call($handler, $vars);
+        $container -> call($handler, $vars);
+//        dd($container);
         break;
 }

@@ -5,7 +5,7 @@
     );
 ?>
     <div class="container">
-      <?php //echo flash(); ?>
+      <?= flash(); ?>
 
       <div class="row justify-content-center mt-5">
         <form action="/login" method="post" class="col-6">

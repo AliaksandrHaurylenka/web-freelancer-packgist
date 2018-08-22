@@ -13,9 +13,14 @@ class ComposerStaticInit6dc935c2907fd052b676c66c9da1b083
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
         'b33e3d135e5d9e47d845c576147bda89' => __DIR__ . '/..' . '/php-di/php-di/src/functions.php',
+        '6157b075b923803e5ef157aeb43b83bd' => __DIR__ . '/..' . '/tamtamchik/simple-flash/src/function.php',
     );
 
     public static $prefixLengthsPsr4 = array (
+        'T' => 
+        array (
+            'Tamtamchik\\SimpleFlash\\' => 23,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Util\\' => 22,
@@ -73,6 +78,10 @@ class ComposerStaticInit6dc935c2907fd052b676c66c9da1b083
     );
 
     public static $prefixDirsPsr4 = array (
+        'Tamtamchik\\SimpleFlash\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tamtamchik/simple-flash/src',
+        ),
         'Symfony\\Polyfill\\Util\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-util',
