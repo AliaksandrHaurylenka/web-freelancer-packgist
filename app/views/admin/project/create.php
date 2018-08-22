@@ -34,25 +34,25 @@
                 <form action="/AliaksandrHaurylenka/project/store" method="post" enctype="multipart/form-data">
                   <div class="form-group">
                     <label for="project">Название проекта</label>
-                    <input type="text" class="form-control" id="project" name="title">
+                    <input type="text" class="form-control" id="project" name="title" required>
                   </div>
 
                   <div class="form-group">
                     <label for="type_project">Тип проекта</label>
-                    <input type="text" class="form-control" id="type_project" name="type_project">
+                    <input type="text" class="form-control" id="type_project" name="type_project" required>
                   </div>
 
                   <div class="form-group">
-                    <label for="editor">Краткое описание</label>
-                    <textarea name="description" class="form-control" id="editor"></textarea>
+                    <label for="description">Краткое описание</label>
+                    <textarea name="description" class="form-control" id="description" required></textarea>
                     <script>
-                      CKEDITOR.replace('editor', {height: 200});
+                      CKEDITOR.replace('description', {height: 200});
                     </script>
                   </div>
 
                   <div class="form-group">
                     <label for="technology">Используемые технологии</label>
-                    <textarea name="technology" class="form-control" id="technology"></textarea>
+                    <textarea name="technology" class="form-control" id="technology" required></textarea>
                     <script>
                       CKEDITOR.replace('technology', {height: 200});
                     </script>
@@ -60,23 +60,23 @@
 
                   <div class="form-group">
                     <label for="link">Ссылка для выпадающего меню</label>
-                    <input type="text" class="form-control" id="link" name="link">
+                    <input type="text" class="form-control" id="link" name="link" required>
                   </div>
 
                   <div class="form-group">
                     <label for="link_site">Ссылка на сайт</label>
-                    <input type="text" class="form-control" id="link_site" name="link_site">
+                    <input type="text" class="form-control" id="link_site" name="link_site" required>
                   </div>
 
 
                   <div class="form-group">
                     <label for="images">Изображение для портфолио</label>
-                    <input type="file" id="images" name="image">
+                    <input type="file" id="images" name="image" required>
                   </div>
 
                   <div class="form-group">
                     <label for="image_site">Изображение сайта</label>
-                    <input type="file" id="image_site" name="image_site">
+                    <input type="file" id="image_site" name="image_site" required>
                   </div>
 
                   <div class="form-group">

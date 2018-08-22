@@ -32,16 +32,6 @@
               <div class="col-md-6">
                 <? //= flash(); ?>
                 <form action="/AliaksandrHaurylenka/services/<?= $services['id']; ?>/update" method="post" enctype="multipart/form-data">
-                  <!--<div class="form-group">
-                    <label for="services">Услуга</label>
-                    <input type="text" class="form-control" id="services" name="title" value="<?/*= $services['name']; */?>">
-                  </div>-->
-
-                  <!--<div class="form-group">
-                    <label for="link">Ссылка на услугу</label>
-                    <input type="text" class="form-control" id="link" name="link"
-                           value="<?/*= $services['link']; */?>">
-                  </div>-->
 
                   <div class="form-group">
                     <label for="description">Описание во вкладке Услуги</label>
@@ -69,25 +59,6 @@
                           CKEDITOR.replace('what_we_do', {height: 150});
                       </script>
                   </div>
-
-
-                  
-                  
-                 <!-- <div class="row" style="margin-bottom: 1rem">
-                    <img src="/img/<?/*= $services['img'].'.png'; */?>" alt="<?/*= $services['name']; */?>" class="col-md-6">
-                    <div class="form-group col-md-6">
-                      <label for="images">Изображение статичное</label>
-                      <input type="file" id="images" name="image">
-                    </div>
-                  </div>-->
-
-                 <!-- <div class="row" style="margin-bottom: 1rem">
-                    <img src="/img/<?/*= $services['img'].'_h.png'; */?>" alt="<?/*= $services['name']; */?>" class="col-md-6">
-                    <div class="form-group col-md-6">
-                      <label for="image_hover">Изображение при наведении мышки</label>
-                      <input type="file" id="image_hover" name="image_hover">
-                    </div>
-                  </div>-->
 
                   <div class="form-group">
                     <button class="btn btn-success" type="submit">Обновить</button>

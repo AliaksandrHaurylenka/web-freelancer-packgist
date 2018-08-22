@@ -34,19 +34,19 @@
                 <form action="/AliaksandrHaurylenka/project/<?= $project['id']; ?>/update" method="post" enctype="multipart/form-data">
                   <div class="form-group">
                     <label for="project">Название проекта</label>
-                    <input type="text" class="form-control" id="project" name="title" value="<?= $project['name']; ?>">
+                    <input type="text" class="form-control" id="project" name="title" value="<?= $project['name']; ?>" required>
                   </div>
 
                   <div class="form-group">
                     <label for="type_project">Тип проекта</label>
                     <input type="text" class="form-control" id="type_project" name="type_project"
-                           value="<?= $project['type_project']; ?>">
+                           value="<?= $project['type_project']; ?>" required>
                   </div>
 
                   <div class="form-group">
                     <label for="description">Краткое описание</label>
                     <textarea name="description" class="form-control"
-                              id="description"><?= $project['description']; ?></textarea>
+                              id="description" required><?= $project['description']; ?></textarea>
                     <script>
                       CKEDITOR.replace('description', {height: 200});
                     </script>
@@ -55,7 +55,7 @@
                   <div class="form-group">
                     <label for="technology">Используемые технологии</label>
                     <textarea name="technology" class="form-control"
-                              id="technology"><?= $project['technology']; ?></textarea>
+                              id="technology" required><?= $project['technology']; ?></textarea>
                     <script>
                       CKEDITOR.replace('technology', {height: 200});
                     </script>
@@ -63,13 +63,13 @@
 
                   <div class="form-group">
                     <label for="link">Ссылка для выпадающего меню</label>
-                    <input type="text" class="form-control" id="link" name="link" value="<?= $project['link']; ?>">
+                    <input type="text" class="form-control" id="link" name="link" value="<?= $project['link']; ?>" required>
                   </div>
 
                   <div class="form-group">
                     <label for="link_site">Ссылка на сайт</label>
                     <input type="text" class="form-control" id="link_site" name="link_site"
-                           value="<?= $project['link_site']; ?>">
+                           value="<?= $project['link_site']; ?>" required>
                   </div>
                   
                   
