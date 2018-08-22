@@ -30,10 +30,10 @@ class PriceController extends MainController
             "time" =>  $_POST['time'],
             "service" =>  $_POST['service'],
         ];
-//        dd($data);
-        $this->database->create('price', $data);
 
-        return redirect('/AliaksandrHaurylenka/price');
+        $this->database->create('price', $data);
+        flash()->success(['Запись успешно добавлена']);
+        return back();
     }
 
 
@@ -54,8 +54,10 @@ class PriceController extends MainController
         ];
 
         $this->database->update('price', $id, $data);
+        flash()->success(['Запись успешно обновлена']);
+        return back();
 
-        return redirect('/AliaksandrHaurylenka/price');
+//        return redirect('/AliaksandrHaurylenka/price');
     }
 
 

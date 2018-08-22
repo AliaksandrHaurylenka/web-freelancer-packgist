@@ -27,10 +27,11 @@
           <div class="">
             <div class="box-header">
               <h2 class="box-title">Проекты</h2>
+                <?= flash(); ?>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <a href="/AliaksandrHaurylenka/project/create" class="btn btn-success btn-lg">Добавить</a> <br> <br>
+              <a href="/AliaksandrHaurylenka/project/create" class="btn btn-success btn-lg">Добавить проект</a> <br> <br>
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>

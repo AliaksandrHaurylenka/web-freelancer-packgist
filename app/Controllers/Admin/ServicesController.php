@@ -15,27 +15,6 @@ class ServicesController extends MainController
         echo $this->views->render('admin/services/index', ['services' =>  $services]);
     }
 
-    public function create()
-    {
-        echo $this->views->render('admin/services/create');
-    }
-
-
-    public function store()
-    {
-        $data = [
-            "works" =>  $_POST['works'],
-            "price" =>  $_POST['price'],
-            "time" =>  $_POST['time'],
-            "service" =>  $_POST['service'],
-        ];
-//        dd($data);
-        $this->database->create('price', $data);
-
-        return redirect('/AliaksandrHaurylenka/price');
-    }
-
-
     public function edit($id)
     {
         $services = $this->database->find('services', $id);
@@ -54,14 +33,7 @@ class ServicesController extends MainController
         ];
 
         $this->database->update('services', $id, $data);
-
-        return redirect('/AliaksandrHaurylenka/services');
-    }
-
-
-    public function delete($id)
-    {
-        $this->database->delete('price', $id);
+        flash()->success(['Услуга успешно обновлена']);
         return back();
     }
 

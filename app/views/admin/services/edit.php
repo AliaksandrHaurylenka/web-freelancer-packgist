@@ -30,7 +30,7 @@
             <!-- /.box-header -->
             <div class="box-body">
               <div class="col-md-6">
-                <? //= flash(); ?>
+                <?= flash(); ?>
                 <form action="/AliaksandrHaurylenka/services/<?= $services['id']; ?>/update" method="post" enctype="multipart/form-data">
 
                   <div class="form-group">

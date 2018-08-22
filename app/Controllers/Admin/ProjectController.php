@@ -53,8 +53,8 @@ class ProjectController extends MainController
       ];
 
     $this->database->create('portfolio_full', $data);
-
-    return redirect('/AliaksandrHaurylenka/project');
+      flash()->success(['Проект успешно добавлен']);
+      return back();
   }
 
       public function edit($id)
@@ -88,8 +88,8 @@ class ProjectController extends MainController
             ];
 
           $this->database->update('portfolio_full', $id, $data);
-
-          return redirect('/AliaksandrHaurylenka/project');
+          flash()->success(['Проект успешно обнавлен']);
+          return back();
       }
 
       public function delete($id)
@@ -98,6 +98,7 @@ class ProjectController extends MainController
           $this->imageManager->deleteImage($project['img']);
           $this->imageManager->deleteImage($project['img_site']);
           $this->database->delete('portfolio_full', $id);
+          flash()->success(['Проект успешно удален']);
           return back();
       }
 

@@ -30,7 +30,7 @@
             <!-- /.box-header -->
             <div class="box-body">
               <div class="col-md-6">
-                <?//= flash(); ?>
+                <?= flash(); ?>
                 <form action="/AliaksandrHaurylenka/project/store" method="post" enctype="multipart/form-data">
                   <div class="form-group">
                     <label for="project">Название проекта</label>
