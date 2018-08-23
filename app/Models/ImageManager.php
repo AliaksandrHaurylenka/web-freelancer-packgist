@@ -21,7 +21,6 @@ class ImageManager
     $filename=strtolower(str_random(10)).'.'.pathinfo(strtolower($image['name']), PATHINFO_EXTENSION);
 //    $image=Image::make($image['tmp_name'])->resize($width, $height);
 //    $image=Image::make($image['tmp_name'])->resizeCanvas($width, $height);
-//    $image=Image::make($image['tmp_name'])->encode('jpg', 30)->fit($width, $height);
     $image=Image::make($image['tmp_name'])->fit($width, $height);
     $image->save($this->folder.$filename);
     return $filename;
@@ -40,22 +39,4 @@ class ImageManager
       unlink($this->folder.$image);
     }
   }
-
-  /*public function getDimensions($file)
-  {
-    if($this->checkImageExists($file)){
-      list($width, $height)=getimagesize($this->folder.$file);
-      return $width."x".$height;
-    }
-  }*/
-
-  /*function getImage($image)
-  {
-
-    if($this->checkImageExists($image)){
-      return '/'.$this->folder.$image;
-    }
-
-    return '/img/no-user.png';
-  }*/
 }

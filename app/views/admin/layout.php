@@ -38,10 +38,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="/adminLTE/css/skin-purple.min.css">
   <link rel="stylesheet" href="/adminLTE/css/mystyle.css">
 
-<!--  <script src="/adminLTE/ckeditor5-build-classic/ckeditor.js"></script>-->
-<!--  <script src="/adminLTE/ckeditor_full/ckeditor.js"></script>-->
+<!--CKEditor-->
   <script src="/adminLTE/ckeditor_standard/ckeditor.js"></script>
-<!--  <script src="/adminLTE/ckeditor_basic/ckeditor.js"></script>-->
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -84,14 +83,37 @@ scratch. This page gets rid of all links and provides the needed markup only.
      user experience. -->
 <script>
   $(function(){
-    $('#example1').DataTable()
-    $('#example2').DataTable({
+    // $('#example1').DataTable();
+    $('#example1').DataTable({
       'paging': true,
-      'lengthChange': false,
-      'searching': false,
+      'lengthChange': true,
+      'searching': true,
       'ordering': true,
       'info': true,
-      'autoWidth': false
+      'autoWidth': false,
+      "order": [[ 1, "desc" ]],
+      "language": {
+        "processing": "Подождите...",
+        "search": "Поиск:",
+        "lengthMenu": "Показать _MENU_ записей",
+        "info": "Записи с _START_ до _END_ из _TOTAL_ записей",
+        "infoEmpty": "Записи с 0 до 0 из 0 записей",
+        "infoFiltered": "(отфильтровано из _MAX_ записей)",
+        "infoPostFix": "",
+        "loadingRecords": "Загрузка записей...",
+        "zeroRecords": "Записи отсутствуют.",
+        "emptyTable": "В таблице отсутствуют данные",
+        "paginate": {
+          "first": "Первая",
+          "previous": "Предыдущая",
+          "next": "Следующая",
+          "last": "Последняя"
+        },
+        "aria": {
+          "sortAscending": ": активировать для сортировки столбца по возрастанию",
+          "sortDescending": ": активировать для сортировки столбца по убыванию"
+        }
+      }
     })
   })
 </script>

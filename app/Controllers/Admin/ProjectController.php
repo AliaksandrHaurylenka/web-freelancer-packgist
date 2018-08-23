@@ -4,9 +4,6 @@ namespace App\Controllers\Admin;
 
 use App\Models\ImageManager;
 
-//use Respect\Validation\Exceptions\ValidationException;
-//use Respect\Validation\Validator as v;
-
 use App\Controllers\MainController;
 
 class ProjectController extends MainController
@@ -32,86 +29,61 @@ class ProjectController extends MainController
 
   public function store()
   {
-    /*$validator=v::key('title', v::stringType()->notEmpty());
-    $this->validate($validator, $_POST, ['title'=>'Заполните поле Название']);*/
     $image=$this->imageManager->uploadImage($_FILES['image'], 736, 330);
     $image_site=$this->imageManager->uploadImage($_FILES['image_site'], 1141, 967);
-//    $dimensions=$this->imageManager->getDimensions($image);
     $data=
       [
-        "name" => $_POST['title'],
+        "name"=>trim(strip_tags($_POST['title'])),
         "img"=>$image,
         "img_site"=>$image_site,
         "description"=>$_POST['description'],
-        "type_project"=>$_POST['type_project'],
+        "type_project"=>trim(strip_tags($_POST['type_project'])),
         "technology"=>$_POST['technology'],
-        "link"=>$_POST['link'],
-        "link_site"=>$_POST['link_site'],
-
-//        "dimensions"=>$dimensions,
-//        "date"=>time(),
+        "link"=>trim(strip_tags($_POST['link'])),
+        "link_site"=>trim(strip_tags($_POST['link_site'])),
       ];
 
     $this->database->create('portfolio_full', $data);
-      flash()->success(['Проект успешно добавлен']);
-      return back();
+    flash()->success(['Проект успешно добавлен']);
+    return back();
   }
 
-      public function edit($id)
-      {
-          $project = $this->database->find('portfolio_full', $id);
-          echo $this->views->render('admin/project/edit', ['project'  =>  $project]);
-      }
+  public function edit($id)
+  {
+    $project=$this->database->find('portfolio_full', $id);
+    echo $this->views->render('admin/project/edit', ['project'=>$project]);
+  }
 
-      public function update($id)
-      {
-          /*$validator = v::key('title', v::stringType()->notEmpty());
-          $this->validate($validator, $_POST, [
-              'title'   =>  'Заполните поле Название'
-          ]);*/
-          $project = $this->database->find('portfolio_full', $id);
+  public function update($id)
+  {
+    $project=$this->database->find('portfolio_full', $id);
 
-          $image=$this->imageManager->uploadImage($_FILES['image'],736, 330, $project['img']);
-          $image_site=$this->imageManager->uploadImage($_FILES['image_site'],1141, 967, $project['img_site']);
-//          $dimensions = $this->imageManager->getDimensions($image);
+    $image=$this->imageManager->uploadImage($_FILES['image'], 736, 330, $project['img']);
+    $image_site=$this->imageManager->uploadImage($_FILES['image_site'], 1141, 967, $project['img_site']);
 
-        $data=
-            [
-                "name" => $_POST['title'],
-                "img"=>$image,
-                "img_site"=>$image_site,
-                "description"=>$_POST['description'],
-                "type_project"=>$_POST['type_project'],
-                "technology"=>$_POST['technology'],
-                "link"=>$_POST['link'],
-                "link_site"=>$_POST['link_site'],
-            ];
+    $data=
+      [
+        "name"=>trim(strip_tags($_POST['title'])),
+        "img"=>$image, "img_site"=>$image_site,
+        "description"=>$_POST['description'],
+        "type_project"=>trim(strip_tags($_POST['type_project'])),
+        "technology"=>$_POST['technology'],
+        "link"=>trim(strip_tags($_POST['link'])),
+        "link_site"=>trim(strip_tags($_POST['link_site'])),
+      ];
 
-          $this->database->update('portfolio_full', $id, $data);
-          flash()->success(['Проект успешно обнавлен']);
-          return back();
-      }
+    $this->database->update('portfolio_full', $id, $data);
+    flash()->success(['Проект успешно обнавлен']);
+    return back();
+  }
 
-      public function delete($id)
-      {
-          $project = $this->database->find('portfolio_full', $id);
-          $this->imageManager->deleteImage($project['img']);
-          $this->imageManager->deleteImage($project['img_site']);
-          $this->database->delete('portfolio_full', $id);
-          flash()->success(['Проект успешно удален']);
-          return back();
-      }
-
-  //    private function validate($validator, $data, $message)
-  //    {
-  //        try {
-  //            $validator->assert($data);
-  //
-  //        } catch (ValidationException $exception) {
-  //            $exception->findMessages($message);
-  //            flash()->error($exception->getMessages());
-  //
-  //            return back();
-  //        }
-  //    }
+  public function delete($id)
+  {
+    $project=$this->database->find('portfolio_full', $id);
+    $this->imageManager->deleteImage($project['img']);
+    $this->imageManager->deleteImage($project['img_site']);
+    $this->database->delete('portfolio_full', $id);
+    flash()->success(['Проект успешно удален']);
+    return back();
+  }
 }
