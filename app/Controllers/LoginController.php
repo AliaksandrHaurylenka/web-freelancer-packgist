@@ -25,11 +25,10 @@ class LoginController extends MainController
     }
   }
 
-  /*public function logout()
+  public function logout()
   {
-      $this->auth->logOut();
-      return redirect('/');
-  }*/
-
-
+//    $this->auth->logOut();
+    session_destroy();
+    return redirect('/');
+  }
 }

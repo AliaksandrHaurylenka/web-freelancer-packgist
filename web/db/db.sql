@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `portfolio_full` (
   `link` varchar(200) NOT NULL,
   `link_site` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- Экспортируемые данные не выделены.
 -- Дамп структуры для таблица packagist-web-freelancer.price
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `price` (
   `time` int(3) NOT NULL,
   `service` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- Экспортируемые данные не выделены.
 -- Дамп структуры для таблица packagist-web-freelancer.services
@@ -65,10 +65,10 @@ CREATE TABLE IF NOT EXISTS `slide` (
 -- Дамп структуры для таблица packagist-web-freelancer.users
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 -- Экспортируемые данные не выделены.
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
