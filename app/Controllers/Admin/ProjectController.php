@@ -39,7 +39,7 @@ class ProjectController extends MainController
         "description"=>$_POST['description'],
         "type_project"=>trim(strip_tags($_POST['type_project'])),
         "technology"=>$_POST['technology'],
-        "link"=>trim(strip_tags($_POST['link'])),
+        "link"=>str_replace('-', '_', strstr($_POST['link_site'], '.', true)),
         "link_site"=>trim(strip_tags($_POST['link_site'])),
       ];
 
@@ -68,7 +68,7 @@ class ProjectController extends MainController
         "description"=>$_POST['description'],
         "type_project"=>trim(strip_tags($_POST['type_project'])),
         "technology"=>$_POST['technology'],
-        "link"=>trim(strip_tags($_POST['link'])),
+        "link"=>str_replace('-', '_', strstr($_POST['link_site'], '.', true)),
         "link_site"=>trim(strip_tags($_POST['link_site'])),
       ];
 

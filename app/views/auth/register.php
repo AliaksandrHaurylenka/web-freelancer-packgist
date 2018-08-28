@@ -11,7 +11,7 @@
       <label for="login">User</label>
       <div class="input-group mb-3">
         <div class="input-group-addon"><i class="fa fa-user"></i></i></div>
-        <input type="text" class="form-control" id="login" placeholder="User" name="admin">
+        <input type="text" class="form-control" id="login" placeholder="User" name="admin" autofocus>
       </div>
       <label for="password">Password</label>
       <div class="input-group">

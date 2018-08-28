@@ -59,7 +59,7 @@ class HomeController extends MainController {
   function work($name)
   {
     $one_work = $this->database->getOne('portfolio_full', 'link', $name);
-//    dd($work);
+//    dd($one_work);
     echo $this->views->render('pages/one-work', compact('one_work'));
   }
 } 

@@ -29,7 +29,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <div class="col-md-6">
+              <div class="col-md-8">
                 <?= flash(); ?>
                 <form action="/AliaksandrHaurylenka/project/store" method="post" enctype="multipart/form-data">
                   <div class="form-group">
@@ -56,11 +56,6 @@
                     <script>
                       CKEDITOR.replace('technology', {height: 200});
                     </script>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="link">Ссылка для выпадающего меню</label>
-                    <input type="text" class="form-control" id="link" name="link" required>
                   </div>
 
                   <div class="form-group">
