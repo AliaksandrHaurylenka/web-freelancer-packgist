@@ -14,6 +14,9 @@
 </head>
 <body>
 
+<!--Модальные окна форм-->
+<?php $this->insert('blocks/modal-step-brif'); ?>
+
 <div class="wrap">
   <div class="content">
     <div class="container">

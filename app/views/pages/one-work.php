@@ -33,12 +33,12 @@
       </div>
 
       <div class="row">
-        <a class="col button button-one-work" href="http://<?= $one_work['link_site']; ?>" target="_blank">Перейти на сайт</a>
+        <a class="col button" href="http://<?= $one_work['link_site']; ?>" target="_blank">Перейти на сайт</a>
       </div>
       
 
       <div class="row one_work_h">
-        <a class="col button button-order" href="/contact#feedback">Заказать проект</a>
+        <a class="col button button-order" data-toggle="modal" data-target=".bd-example-modal-lg" href="#">Заказать проект</a>
       </div>
     </div><!--<div class="one_work_desc">-->
 
@@ -71,16 +71,13 @@
       </div>
 
       <div class="d-flex justify-content-around align-items-center">
-        <a class="button button-one-work" href="http://<?= $one_work['link_site'];; ?>" target="_blank">Перейти на сайт</a>
-        <div class="one_work_h">
-          <a class="button button-order" href="<?= $menu[2]['href']; ?>#feedback">Заказать проект</a>
-        </div>
+        <a class="button" href="http://<?= $one_work['link_site'];; ?>" target="_blank">Перейти на сайт</a>
+        <a class="button button-order" data-toggle="modal" data-target=".bd-example-modal-lg" href="#">Заказать проект</a>
       </div>
 
       <!-- screen < 480px -->
       <a class="button button-one-work hidden_768" href="http://<?= $one_work['link_site']; ?>" target="_blank">Перейти на сайт</a>
-      <a class="button button-order hidden_768" href="<?= $menu[2]['href']; ?>#feedback">Заказать проект</a>
-      
+      <a class="button button-order hidden_768" data-toggle="modal" data-target=".bd-example-modal-lg" href="#">Заказать проект</a>
     </div><!--<div class="one_work_desc_mobile">-->
   </div><!--<div class="one_work">-->
 
