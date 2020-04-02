@@ -17,12 +17,12 @@
 <div class="wrap">
   <div class="content">
     <div class="container">
-      <? $this->insert('blocks/header') ; ?>
+      <?= $this->insert('blocks/header') ; ?>
     </div>
     <?= $this->section('content') ?>
   </div><!--/.content-->
 
-  <? $this->insert('blocks/footer'); ?>
+  <?= $this->insert('blocks/footer'); ?>
 </div><!--wrap-->
 
 

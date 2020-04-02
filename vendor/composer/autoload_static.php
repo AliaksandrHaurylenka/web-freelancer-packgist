@@ -8,6 +8,7 @@ class ComposerStaticInit6dc935c2907fd052b676c66c9da1b083
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
@@ -26,6 +27,7 @@ class ComposerStaticInit6dc935c2907fd052b676c66c9da1b083
             'Symfony\\Polyfill\\Util\\' => 22,
             'Symfony\\Polyfill\\Php56\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Contracts\\Translation\\' => 30,
             'Symfony\\Component\\Translation\\' => 30,
             'SuperClosure\\' => 13,
         ),
@@ -68,7 +70,7 @@ class ComposerStaticInit6dc935c2907fd052b676c66c9da1b083
         ),
         'C' => 
         array (
-            'Composer\\Installers\\' => 20,
+            'Carbon\\' => 7,
         ),
         'A' => 
         array (
@@ -93,6 +95,10 @@ class ComposerStaticInit6dc935c2907fd052b676c66c9da1b083
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Contracts\\Translation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/translation-contracts',
         ),
         'Symfony\\Component\\Translation\\' => 
         array (
@@ -178,9 +184,9 @@ class ComposerStaticInit6dc935c2907fd052b676c66c9da1b083
         array (
             0 => __DIR__ . '/..' . '/php-di/php-di/src',
         ),
-        'Composer\\Installers\\' => 
+        'Carbon\\' => 
         array (
-            0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
+            0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
         'Aura\\SqlQuery\\' => 
         array (
@@ -192,16 +198,11 @@ class ComposerStaticInit6dc935c2907fd052b676c66c9da1b083
         ),
     );
 
-    public static $fallbackDirsPsr4 = array (
-        0 => __DIR__ . '/..' . '/nesbot/carbon/src',
-    );
-
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit6dc935c2907fd052b676c66c9da1b083::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit6dc935c2907fd052b676c66c9da1b083::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInit6dc935c2907fd052b676c66c9da1b083::$fallbackDirsPsr4;
 
         }, null, ClassLoader::class);
     }

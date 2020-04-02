@@ -101,6 +101,11 @@ class ContainerBuilder
     private $sourceCache = false;
 
     /**
+     * @var string
+     */
+    protected $sourceCacheNamespace;
+
+    /**
      * Build a container configured for the dev environment.
      */
     public static function buildDevContainer() : Container
@@ -111,7 +116,7 @@ class ContainerBuilder
     /**
      * @param string $containerClass Name of the container class, used to create the container.
      */
-    public function __construct(string $containerClass = 'DI\Container')
+    public function __construct(string $containerClass = Container::class)
     {
         $this->containerClass = $containerClass;
     }
@@ -155,17 +160,20 @@ class ContainerBuilder
                 throw new \Exception('APCu is not enabled, PHP-DI cannot use it as a cache');
             }
             // Wrap the source with the cache decorator
-            $source = new SourceCache($source);
+            $source = new SourceCache($source, $this->sourceCacheNamespace);
         }
 
-        $proxyFactory = new ProxyFactory($this->writeProxiesToFile, $this->proxyDirectory);
+        $proxyFactory = new ProxyFactory(
+            $this->writeProxiesToFile,
+            $this->proxyDirectory
+        );
 
         $this->locked = true;
 
         $containerClass = $this->containerClass;
 
         if ($this->compileToDirectory) {
-            $compiler = new Compiler;
+            $compiler = new Compiler($proxyFactory);
             $compiledContainerFile = $compiler->compile(
                 $source,
                 $this->compileToDirectory,
@@ -306,24 +314,26 @@ class ContainerBuilder
     /**
      * Add definitions to the container.
      *
-     * @param string|array|DefinitionSource $definitions Can be an array of definitions, the
-     *                                                   name of a file containing definitions
-     *                                                   or a DefinitionSource object.
+     * @param string|array|DefinitionSource ...$definitions Can be an array of definitions, the
+     *                                                      name of a file containing definitions
+     *                                                      or a DefinitionSource object.
      * @return $this
      */
-    public function addDefinitions($definitions) : self
+    public function addDefinitions(...$definitions) : self
     {
         $this->ensureNotLocked();
 
-        if (!is_string($definitions) && !is_array($definitions) && !($definitions instanceof DefinitionSource)) {
-            throw new InvalidArgumentException(sprintf(
-                '%s parameter must be a string, an array or a DefinitionSource object, %s given',
-                'ContainerBuilder::addDefinitions()',
-                is_object($definitions) ? get_class($definitions) : gettype($definitions)
-            ));
-        }
+        foreach ($definitions as $definition) {
+            if (!is_string($definition) && !is_array($definition) && !($definition instanceof DefinitionSource)) {
+                throw new InvalidArgumentException(sprintf(
+                    '%s parameter must be a string, an array or a DefinitionSource object, %s given',
+                    'ContainerBuilder::addDefinitions()',
+                    is_object($definition) ? get_class($definition) : gettype($definition)
+                ));
+            }
 
-        $this->definitionSources[] = $definitions;
+            $this->definitionSources[] = $definition;
+        }
 
         return $this;
     }
@@ -345,13 +355,15 @@ class ContainerBuilder
      *
      * @see http://php-di.org/doc/performances.html
      *
+     * @param string $cacheNamespace use unique namespace per container when sharing a single APC memory pool to prevent cache collisions
      * @return $this
      */
-    public function enableDefinitionCache() : self
+    public function enableDefinitionCache(string $cacheNamespace = '') : self
     {
         $this->ensureNotLocked();
 
         $this->sourceCache = true;
+        $this->sourceCacheNamespace = $cacheNamespace;
 
         return $this;
     }

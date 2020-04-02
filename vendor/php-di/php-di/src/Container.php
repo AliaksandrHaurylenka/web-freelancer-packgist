@@ -16,6 +16,7 @@ use DI\Definition\Source\DefinitionArray;
 use DI\Definition\Source\MutableDefinitionSource;
 use DI\Definition\Source\ReflectionBasedAutowiring;
 use DI\Definition\Source\SourceChain;
+use DI\Definition\ValueDefinition;
 use DI\Invoker\DefinitionParameterResolver;
 use DI\Proxy\ProxyFactory;
 use InvalidArgumentException;
@@ -118,7 +119,6 @@ class Container implements ContainerInterface, FactoryInterface, InvokerInterfac
      *
      * @param string $name Entry name or a class name.
      *
-     * @throws InvalidArgumentException The name parameter must be of type string.
      * @throws DependencyException Error while resolving the entry.
      * @throws NotFoundException No entry found for the given name.
      * @return mixed
@@ -283,7 +283,10 @@ class Container implements ContainerInterface, FactoryInterface, InvokerInterfac
             $value = new FactoryDefinition($name, $value);
         }
 
-        if ($value instanceof Definition) {
+        if ($value instanceof ValueDefinition) {
+            $this->resolvedEntries[$name] = $value->getValue();
+        } elseif ($value instanceof Definition) {
+            $value->setName($name);
             $this->setDefinition($name, $value);
         } else {
             $this->resolvedEntries[$name] = $value;
